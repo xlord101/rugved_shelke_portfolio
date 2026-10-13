@@ -44,12 +44,14 @@ export function Footer() {
               >
                 {contactContent.email}
               </a>
-              <a
-                href={`tel:${contactContent.phone.replace(/[^0-9+]/g, "")}`}
-                className="text-lg sm:text-xl font-normal text-zinc-600 dark:text-zinc-400 hover:opacity-70 transition-opacity block"
-              >
-                {contactContent.phone}
-              </a>
+              {contactContent.phone && (
+                <a
+                  href={`tel:${contactContent.phone.replace(/[^0-9+]/g, "")}`}
+                  className="text-lg sm:text-xl font-normal text-zinc-600 dark:text-zinc-400 hover:opacity-70 transition-opacity block"
+                >
+                  {contactContent.phone}
+                </a>
+              )}
             </div>
 
             {/* Social pills */}

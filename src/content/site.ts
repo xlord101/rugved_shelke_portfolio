@@ -2,13 +2,14 @@ import { SiteConfig } from "@/lib/types";
 
 export const siteContent: SiteConfig = {
   // Replace these placeholders with your personal profile details
-  personName: "Soren Weil", // Placeholder: [PERSON NAME]
-  professionalTitle: "AI Design Engineer", // Placeholder: [PROFESSIONAL TITLE]
-  location: "Kolhāpur", // Placeholder: [LOCATION]
-  timezone: "Asia/Kolkata", // Configured timezone for live header clock
-  bioShort: "AI Design Engineer crafting thoughtful digital interfaces & experiences.", // Placeholder: [BIO SHORT]
-  availabilityStatus: "One spot available for May, 2026", // Placeholder: [AVAILABILITY STATUS]
-  resumeUrl: "/resume-placeholder.pdf", // Placeholder: [RESUME URL]
+  personName: "Rugved Shelke",
+  professionalTitle: "AI & Software Engineer · Product Builder",
+  location: "Kolhāpur",
+  timezone: "Asia/Kolkata",
+  bioShort:
+    "I build AI-native applications and software systems that solve practical problems — from intelligent developer tools and race-strategy systems to production software for real businesses.",
+  availabilityStatus: "",
+  resumeUrl: "/resume-placeholder.pdf",
   tools: [
     { name: "Figma", category: "Design", icon: "figma" },
     { name: "Claude", category: "AI & Code", icon: "claude" },

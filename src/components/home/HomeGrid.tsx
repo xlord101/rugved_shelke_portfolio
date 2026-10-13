@@ -92,7 +92,7 @@ export function HomeGrid() {
             onMouseEnter={() => setActiveHover("portfolio")}
             onMouseLeave={() => setActiveHover(null)}
             style={{ animationDelay: "180ms" }}
-            className={`group animate-tile-in md:col-span-8 lg:col-span-8.5 xl:col-span-9 h-[210px] sm:h-[250px] md:h-[290px] p-6 sm:p-8 rounded-[22px] sm:rounded-[28px] glass-panel flex flex-col justify-end select-none overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            className={`group animate-tile-in md:col-span-8 lg:col-span-8.5 xl:col-span-9 h-[210px] sm:h-[250px] md:h-[290px] p-6 sm:p-8 rounded-[22px] sm:rounded-[28px] glass-panel flex flex-col justify-between select-none overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
               isHovered("portfolio")
                 ? "glass-panel-hovered z-20"
                 : isDimmed("portfolio")
@@ -100,6 +100,21 @@ export function HomeGrid() {
                 : "scale-100"
             }`}
           >
+            {/* Project Highlights: RaceIQ and Startrek (KD Export) */}
+            <div
+              className={`flex items-center gap-2 text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 font-medium transition-opacity duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                isHovered("portfolio")
+                  ? "opacity-100"
+                  : isDimmed("portfolio")
+                  ? "opacity-60"
+                  : "opacity-80"
+              }`}
+            >
+              <span>RaceIQ</span>
+              <span className="opacity-40">·</span>
+              <span>Startrek (KD Export)</span>
+            </div>
+
             <div
               className={`flex items-center justify-between w-full transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                 isHovered("portfolio")
@@ -165,7 +180,7 @@ export function HomeGrid() {
           >
             <Image
               src="/images/profile-portrait.png"
-              alt="Portrait of Soren Weil"
+              alt="Portrait of Rugved Shelke"
               fill
               sizes="(max-width: 768px) 50vw, 25vw"
               className="object-cover object-center grayscale contrast-125 dark:brightness-95 transition-transform duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-106"
@@ -195,12 +210,14 @@ export function HomeGrid() {
           </div>
         </div>
 
-        {/* Homepage Bottomline from vexooclone */}
+        {/* Homepage Bottomline with Rugved's updated bio */}
         <div className="w-full flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-8 sm:pt-12 text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 select-none">
-          <span>Independent by nature. Collaborative by choice.</span>
+          <p className="max-w-2xl text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 select-none leading-relaxed">
+            {siteContent.bioShort}
+          </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-1.5 text-black dark:text-white font-medium hover:opacity-75 transition-opacity group"
+            className="inline-flex items-center gap-1.5 text-black dark:text-white font-medium hover:opacity-75 transition-opacity group shrink-0"
           >
             <span>Let&apos;s talk</span>
             <ArrowUpRight className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1" />
