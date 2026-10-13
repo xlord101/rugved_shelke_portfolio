@@ -92,7 +92,7 @@ export function HomeGrid() {
             onMouseEnter={() => setActiveHover("portfolio")}
             onMouseLeave={() => setActiveHover(null)}
             style={{ animationDelay: "180ms" }}
-            className={`group animate-tile-in md:col-span-8 lg:col-span-8.5 xl:col-span-9 h-[210px] sm:h-[250px] md:h-[290px] p-6 sm:p-8 rounded-[22px] sm:rounded-[28px] glass-panel flex flex-col justify-between select-none overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            className={`group animate-tile-in md:col-span-8 lg:col-span-8.5 xl:col-span-9 h-[210px] sm:h-[250px] md:h-[290px] p-6 sm:p-8 rounded-[22px] sm:rounded-[28px] glass-panel flex flex-col justify-end select-none overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
               isHovered("portfolio")
                 ? "glass-panel-hovered z-20"
                 : isDimmed("portfolio")
@@ -100,21 +100,6 @@ export function HomeGrid() {
                 : "scale-100"
             }`}
           >
-            {/* Project Highlights: RaceIQ and Startrek (KD Export) */}
-            <div
-              className={`flex items-center gap-2 text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 font-medium transition-opacity duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-                isHovered("portfolio")
-                  ? "opacity-100"
-                  : isDimmed("portfolio")
-                  ? "opacity-60"
-                  : "opacity-80"
-              }`}
-            >
-              <span>RaceIQ</span>
-              <span className="opacity-40">·</span>
-              <span>Startrek (KD Export)</span>
-            </div>
-
             <div
               className={`flex items-center justify-between w-full transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                 isHovered("portfolio")
