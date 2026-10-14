@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props) {
   if (!project) return { title: "Project Not Found" };
 
   return {
-    title: `${project.title} – Soren Weil`,
+    title: `${project.title} – Rugved Shelke`,
     description: project.overview,
   };
 }

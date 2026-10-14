@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="100%" height="100%">
+  <defs>
+    <radialGradient id="stealthGlow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.18" />
+      <stop offset="60%" stop-color="#18181b" stop-opacity="0.05" />
+      <stop offset="100%" stop-color="#09090b" stop-opacity="0" />
+    </radialGradient>
+    <pattern id="dotGrid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.2" fill="#27272a" fill-opacity="0.6" />
+    </pattern>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1200" height="800" fill="#09090b" />
+  <rect width="1200" height="800" fill="url(#dotGrid)" />
+  <circle cx="600" cy="400" r="380" fill="url(#stealthGlow)" />
+
+  <!-- Ambient Border Accent -->
+  <rect x="40" y="40" width="1120" height="720" rx="24" fill="none" stroke="#27272a" stroke-width="1.5" stroke-dasharray="8 8" />
+
+  <!-- Center Card Module -->
+  <g transform="translate(600, 400)">
+    <!-- Pill Badge -->
+    <rect x="-110" y="-120" width="220" height="36" rx="18" fill="#18181b" stroke="#3f3f46" stroke-width="1.5" />
+    <circle cx="-80" cy="-102" r="4.5" fill="#eab308">
+      <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <text x="-65" y="-96" fill="#fef08a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" letter-spacing="2">IN THE WORKSHOP</text>
+
+    <!-- Headline -->
+    <text x="0" y="-10" text-anchor="middle" fill="#f4f4f5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="44" font-weight="700" letter-spacing="-1">
+      Next Breakthrough
+    </text>
+
+    <!-- Subtitle -->
+    <text x="0" y="32" text-anchor="middle" fill="#71717a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="400" letter-spacing="0.5">
+      Autonomous Systems // High-Throughput Engineering
+    </text>
+
+    <!-- Technical Specs row -->
+    <g transform="translate(0, 85)">
+      <rect x="-190" y="0" width="380" height="42" rx="21" fill="#18181b" stroke="#27272a" stroke-width="1" />
+      <text x="0" y="26" text-anchor="middle" fill="#a1a1aa" font-family="ui-monospace, monospace" font-size="12" letter-spacing="1">
+        STATUS: COMPILING &amp; BENCHMARKING · 2026
+      </text>
+    </g>
+  </g>
+</svg>
