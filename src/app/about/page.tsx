@@ -6,8 +6,8 @@ import { ExperienceTimeline } from "@/components/about/ExperienceTimeline";
 import { ClosingHeading } from "@/components/about/ClosingHeading";
 
 export const metadata = {
-  title: "About – Soren Weil",
-  description: "Learn more about Soren Weil, design philosophy, testimonials, and career experience.",
+  title: "About – Rugved Shelke",
+  description: "Learn more about Rugved Shelke, engineering principles, experience, and projects.",
 };
 
 export default function AboutPage() {

@@ -86,13 +86,13 @@ export function AboutBio() {
             })}
           </p>
 
-          {/* Portrait of Soren aligned to right column below bio */}
+          {/* Portrait of Rugved aligned to right column below bio */}
           <div className="w-full sm:w-[88%] lg:w-[68%] ml-auto mt-16 sm:mt-24">
             <figure className="w-full flex flex-col">
               <div className="w-full aspect-[4/5] relative rounded-[22px] sm:rounded-[28px] overflow-hidden border border-black/10 dark:border-white/10 bg-black/5 dark:bg-black group">
                 <Image
                   src={aboutContent.portraitImage}
-                  alt="Portrait of Soren Weil"
+                  alt="Portrait of Rugved Shelke"
                   fill
                   sizes="(max-width: 1024px) 100vw, 45vw"
                   className="object-cover object-top grayscale contrast-125 dark:brightness-95 group-hover:scale-104 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
@@ -100,8 +100,8 @@ export function AboutBio() {
                 />
               </div>
               <figcaption className="flex items-center justify-between pt-3 px-1 text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 select-none">
-                <span className="font-medium text-black dark:text-white">Soren Weil</span>
-                <span>AI Design Engineer</span>
+                <span className="font-medium text-black dark:text-white">Rugved Shelke</span>
+                <span>AI & Software Engineer · Product Builder</span>
               </figcaption>
             </figure>
           </div>

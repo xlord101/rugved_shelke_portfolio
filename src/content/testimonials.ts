@@ -2,38 +2,38 @@ import { TestimonialItem } from "@/lib/types";
 
 export const testimonialsContent: TestimonialItem[] = [
   {
-    id: "quote-1",
+    id: "principle-1",
     quote:
-      "Soren has this rare ability to hold the big picture and the smallest detail at the same time. He pushes every project to a level you didn't know was possible – and makes the process feel effortless.",
-    author: "Marcus Holm", // Placeholder: [AUTHOR NAME]
-    company: "Fenwick Studio", // Placeholder: [COMPANY NAME]
+      "Build for real use — I value software that solves a concrete problem and works beyond a demonstration.",
+    author: "Engineering principle",
+    company: "· How I Work",
   },
   {
-    id: "quote-2",
+    id: "principle-2",
     quote:
-      "Working with Soren changed how I think about creative direction. He doesn't just design – he asks the right questions until the work means something. That clarity is hard to find.",
-    author: "Layla Thornton", // Placeholder: [AUTHOR NAME]
-    company: "Dayloom", // Placeholder: [COMPANY NAME]
+      "Verify before shipping — I check assumptions, test edge cases, and treat AI-generated output as something to validate.",
+    author: "Engineering principle",
+    company: "· How I Work",
   },
   {
-    id: "quote-3",
+    id: "principle-3",
     quote:
-      "Soren is one of those creatives who makes everyone around him better. His taste is impeccable, his feedback is generous, and his commitment to the work never wavers no matter the scale of the project.",
-    author: "Jin Park", // Placeholder: [AUTHOR NAME]
-    company: "Haulk", // Placeholder: [COMPANY NAME]
+      "Own the outcome — I care about implementation, reliability, and what happens after a feature is delivered.",
+    author: "Engineering principle",
+    company: "· How I Work",
   },
   {
-    id: "quote-4",
+    id: "principle-4",
     quote:
-      "I've worked with a lot of creative directors, but Soren stands apart. He brings both strong vision and genuine openness to collaboration – a combination that's almost impossible to come by.",
-    author: "Nadia Osei", // Placeholder: [AUTHOR NAME]
-    company: "Morsel", // Placeholder: [COMPANY NAME]
+      "Learn by building — I strengthen my understanding by creating projects, experimenting, and working through practical problems.",
+    author: "Engineering principle",
+    company: "· How I Work",
   },
   {
-    id: "quote-5",
+    id: "principle-5",
     quote:
-      "Soren brings a kind of quiet confidence to every brief — he listens first, then shapes the direction in a way that feels inevitable. You walk away wondering why you didn't see it sooner.",
-    author: "Reem Saleh", // Placeholder: [AUTHOR NAME]
-    company: "Vaulted", // Placeholder: [COMPANY NAME]
+      "Think across the stack — I consider the user experience, backend behavior, data integrity, and the complete product workflow.",
+    author: "Engineering principle",
+    company: "· How I Work",
   },
 ];
