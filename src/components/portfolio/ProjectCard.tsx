@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
 import { ProjectItem } from "@/lib/types";
 
 interface ProjectCardProps {
@@ -11,10 +11,14 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project, isFullWidth = false }: ProjectCardProps) {
+  const targetUrl = project.liveUrl || `/portfolio/${project.slug}`;
+  const isExternal = Boolean(project.liveUrl);
+
   return (
-    <Link
-      href={`/portfolio/${project.slug}`}
-      className="group block w-full rounded-[28px] sm:rounded-[36px] overflow-hidden glass-panel hover:glass-panel-hovered p-3 sm:p-4 select-none"
+    <a
+      href={targetUrl}
+      {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+      className="group block w-full rounded-[28px] sm:rounded-[36px] overflow-hidden glass-panel hover:glass-panel-hovered p-3 sm:p-4 select-none cursor-pointer"
     >
       {/* Mockup Image Container */}
       <div
@@ -38,10 +42,11 @@ export function ProjectCard({ project, isFullWidth = false }: ProjectCardProps) 
         <h2 className="text-xl sm:text-2xl font-medium tracking-tight">
           {project.title}
         </h2>
-        <span className="text-sm sm:text-base font-normal text-zinc-500 dark:text-zinc-400">
-          {project.category}
+        <span className="text-sm sm:text-base font-normal text-zinc-500 dark:text-zinc-400 inline-flex items-center gap-1.5">
+          <span>{project.category}</span>
+          <ArrowUpRight className="w-4 h-4 opacity-70 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
         </span>
       </div>
-    </Link>
+    </a>
   );
 }

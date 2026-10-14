@@ -80,7 +80,7 @@ export const projectsContent: ProjectItem[] = [
     title: "House of 666 — Cafe & Restaurant Experience",
     category: "Client Work / Web Experience",
     year: "2024 – 2025",
-    image: "/images/projects/house-of-666.png",
+    image: "/images/projects/house-of-666-hero.png",
     overview:
       "Designed and engineered an atmospheric, responsive web experience and digital menu for House of 666 cafe & resto — where royal Kolhapuri heritage meets seaside cafe vibes. Focused on immersive aesthetics, rich visual storytelling, fluid micro-interactions, and frictionless mobile navigation for diners discovering menu offerings and ambiance.",
     challenge:
