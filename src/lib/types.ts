@@ -51,6 +51,8 @@ export interface ProjectItem {
   client?: string;
   role?: string;
   liveUrl?: string;
+  linkLabel?: string;
+  links?: { label: string; url: string }[];
   scope?: string[];
 }
 

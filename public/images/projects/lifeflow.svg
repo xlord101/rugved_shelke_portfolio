@@ -1,0 +1,53 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" fill="#0A0809"/>
+  <defs>
+    <radialGradient id="l-glow" cx="60%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#EC4899" stop-opacity="0.16"/>
+      <stop offset="50%" stop-color="#1F101A" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#0A0809" stop-opacity="1"/>
+    </radialGradient>
+    <pattern id="l-grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#l-glow)"/>
+  <rect width="1600" height="1000" fill="url(#l-grid)"/>
+
+  <g transform="translate(140, 140)">
+    <rect width="1320" height="720" rx="32" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+
+    <!-- Badge -->
+    <rect x="60" y="60" width="280" height="42" rx="21" fill="rgba(236,72,153,0.12)" stroke="#EC4899" stroke-opacity="0.4"/>
+    <text x="200" y="86" fill="#F472B6" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="600" text-anchor="middle" letter-spacing="1.5">HEALTHCARE COORDINATION</text>
+
+    <text x="60" y="210" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="68" font-weight="600" letter-spacing="-2">LifeFlow</text>
+    <text x="60" y="270" fill="rgba(255,255,255,0.6)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="400">Blood Donation Coordination &amp; Real-Time Inventory Dashboard</text>
+
+    <!-- Schema Diagram -->
+    <g transform="translate(60, 360)">
+      <rect width="1200" height="260" rx="20" fill="rgba(0,0,0,0.4)" stroke="rgba(255,255,255,0.05)"/>
+      <text x="40" y="50" fill="rgba(255,255,255,0.4)" font-family="monospace" font-size="13" letter-spacing="2">SYSTEM WORKFLOW // DONOR AVAILABILITY → INVENTORY QUEUE → NOTIFICATION</text>
+
+      <g transform="translate(40, 80)">
+        <rect x="0" y="20" width="300" height="110" rx="14" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)"/>
+        <text x="24" y="52" fill="#EC4899" font-family="monospace" font-size="12">CORE MODULE 01</text>
+        <text x="24" y="78" fill="#FFF" font-family="-apple-system, sans-serif" font-size="15" font-weight="600">Blood Bank Inventory</text>
+        <text x="24" y="100" fill="rgba(255,255,255,0.4)" font-family="-apple-system, sans-serif" font-size="12">A / B / AB / O Group Tracking</text>
+
+        <path d="M 320 75 L 360 75" stroke="#EC4899" stroke-width="2"/>
+
+        <rect x="380" y="20" width="300" height="110" rx="14" fill="rgba(236,72,153,0.1)" stroke="#EC4899" stroke-opacity="0.3"/>
+        <text x="404" y="52" fill="#F472B6" font-family="monospace" font-size="12">CORE MODULE 02</text>
+        <text x="404" y="78" fill="#FFF" font-family="-apple-system, sans-serif" font-size="15" font-weight="600">Donor Matching</text>
+        <text x="404" y="100" fill="rgba(255,255,255,0.4)" font-family="-apple-system, sans-serif" font-size="12">Eligibility Intervals &amp; Location</text>
+
+        <path d="M 700 75 L 740 75" stroke="#EC4899" stroke-width="2"/>
+
+        <rect x="760" y="20" width="300" height="110" rx="14" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)"/>
+        <text x="784" y="52" fill="#10B981" font-family="monospace" font-size="12">CORE MODULE 03</text>
+        <text x="784" y="78" fill="#FFF" font-family="-apple-system, sans-serif" font-size="15" font-weight="600">Urgent Request Dispatch</text>
+        <text x="784" y="100" fill="rgba(255,255,255,0.4)" font-family="-apple-system, sans-serif" font-size="12">Streamlined Coordination Queue</text>
+      </g>
+    </g>
+  </g>
+</svg>

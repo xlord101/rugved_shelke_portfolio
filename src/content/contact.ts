@@ -7,6 +7,7 @@ export const contactContent: ContactContent = {
   phone: "",
   socials: [
     { label: "GitHub", handle: "@xlord101", url: "https://github.com/xlord101" },
+    { label: "LinkedIn", handle: "Rugved Shelke", url: "https://www.linkedin.com/in/rugvedshelke" },
   ],
   projectTypes: [
     "Multipage Website Design",

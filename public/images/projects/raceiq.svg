@@ -1,0 +1,64 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" fill="#090A0D"/>
+  <defs>
+    <radialGradient id="r-glow" cx="60%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#E10600" stop-opacity="0.18"/>
+      <stop offset="50%" stop-color="#141824" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#090A0D" stop-opacity="1"/>
+    </radialGradient>
+    <pattern id="r-grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(255,255,255,0.035)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#r-glow)"/>
+  <rect width="1600" height="1000" fill="url(#r-grid)"/>
+
+  <!-- Telemetry Curve Schematic -->
+  <g opacity="0.35">
+    <path d="M 120 780 C 300 760, 420 540, 600 580 C 780 620, 880 340, 1080 380 C 1280 420, 1380 220, 1500 240" stroke="#E10600" stroke-width="3" fill="none"/>
+    <path d="M 120 820 C 300 800, 420 600, 600 640 C 780 680, 880 400, 1080 440 C 1280 480, 1380 280, 1500 300" stroke="#FFFFFF" stroke-opacity="0.2" stroke-width="2" stroke-dasharray="6 6" fill="none"/>
+  </g>
+
+  <!-- Central Card Schema -->
+  <g transform="translate(140, 140)">
+    <rect width="1320" height="720" rx="32" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+    
+    <!-- Badges -->
+    <rect x="60" y="60" width="220" height="42" rx="21" fill="rgba(225,6,0,0.12)" stroke="#E10600" stroke-opacity="0.4"/>
+    <text x="170" y="86" fill="#FF4D4D" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="600" text-anchor="middle" letter-spacing="1.5">F1 MOTORSPORT AI</text>
+
+    <text x="60" y="210" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="68" font-weight="600" letter-spacing="-2">RaceIQ</text>
+    <text x="60" y="270" fill="rgba(255,255,255,0.6)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="400">Real-Time Race Strategy &amp; Telemetry Decision Engine</text>
+
+    <!-- HMM State Visualizer Mock -->
+    <g transform="translate(60, 360)">
+      <rect width="1200" height="260" rx="20" fill="rgba(0,0,0,0.4)" stroke="rgba(255,255,255,0.05)"/>
+      <text x="40" y="50" fill="rgba(255,255,255,0.4)" font-family="monospace" font-size="13" letter-spacing="2">SUBSYSTEM ARCHITECTURE // 8-STATE HIDDEN MARKOV MODEL + MPC</text>
+      
+      <!-- Nodes -->
+      <g transform="translate(60, 100)">
+        <circle cx="80" cy="50" r="30" fill="rgba(225,6,0,0.15)" stroke="#E10600"/>
+        <text x="80" y="55" fill="#FFF" font-family="monospace" font-size="12" text-anchor="middle">HARVEST</text>
+        <line x1="120" y1="50" x2="220" y2="50" stroke="rgba(255,255,255,0.2)" stroke-width="2" stroke-dasharray="4 4"/>
+        
+        <circle cx="260" cy="50" r="30" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.3)"/>
+        <text x="260" y="55" fill="#FFF" font-family="monospace" font-size="12" text-anchor="middle">HOLD</text>
+        <line x1="300" y1="50" x2="400" y2="50" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+        
+        <circle cx="440" cy="50" r="30" fill="rgba(225,6,0,0.25)" stroke="#E10600" stroke-width="2"/>
+        <text x="440" y="55" fill="#FFF" font-family="monospace" font-size="12" text-anchor="middle">ATTACK</text>
+        <line x1="480" y1="50" x2="580" y2="50" stroke="rgba(255,255,255,0.2)" stroke-width="2" stroke-dasharray="4 4"/>
+        
+        <circle cx="620" cy="50" r="30" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.3)"/>
+        <text x="620" y="55" fill="#FFF" font-family="monospace" font-size="12" text-anchor="middle">DEFEND</text>
+
+        <!-- Metrics pill -->
+        <g transform="translate(740, 20)">
+          <rect width="320" height="60" rx="12" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+          <text x="20" y="26" fill="rgba(255,255,255,0.4)" font-family="monospace" font-size="11">ESTIMATED BATTERY SOC DELTA</text>
+          <text x="20" y="48" fill="#4ADE80" font-family="monospace" font-size="16" font-weight="bold">+4.2% OVERCUT WINDOW</text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -63,10 +63,30 @@ export function ProjectDetail({ project, nextProject }: ProjectDetailProps) {
           </div>
         )}
 
-        {project.liveUrl && (
+        {project.links && project.links.length > 0 ? (
           <div>
             <span className="block text-xs uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-2 font-medium">
-              Website
+              Client Websites
+            </span>
+            <div className="flex flex-col gap-2">
+              {project.links.map((link) => (
+                <a
+                  key={link.url}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 font-medium hover:opacity-70 transition-opacity"
+                >
+                  <span>{link.label}</span>
+                  <ArrowUpRight className="w-4 h-4" />
+                </a>
+              ))}
+            </div>
+          </div>
+        ) : project.liveUrl ? (
+          <div>
+            <span className="block text-xs uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-2 font-medium">
+              {project.linkLabel ? "Link" : "Website"}
             </span>
             <a
               href={project.liveUrl}
@@ -74,11 +94,11 @@ export function ProjectDetail({ project, nextProject }: ProjectDetailProps) {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1 font-medium hover:opacity-70 transition-opacity"
             >
-              <span>Visit Site</span>
+              <span>{project.linkLabel || "Visit Site"}</span>
               <ArrowUpRight className="w-4 h-4" />
             </a>
           </div>
-        )}
+        ) : null}
       </div>
 
       {/* Narrative Section: Overview, Challenge, Solution */}
