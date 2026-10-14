@@ -120,7 +120,7 @@ export function ToolStack({ onHover, isDimmed, isHovered }: ToolStackProps) {
             <div
               key={`tool-1-${idx}`}
               title={tool.name}
-              className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/10 flex items-center justify-center p-2.5 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-108 shrink-0 shadow-xs"
+              className="w-12 h-12 sm:w-13 sm:h-13 rounded-2xl bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/10 flex items-center justify-center p-2 sm:p-2.5 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-108 shrink-0 shadow-xs [&_svg]:!w-6.5 [&_svg]:!h-6.5 sm:[&_svg]:!w-7 sm:[&_svg]:!h-7"
             >
               {tool.icon}
             </div>
@@ -131,7 +131,7 @@ export function ToolStack({ onHover, isDimmed, isHovered }: ToolStackProps) {
             <div
               key={`tool-2-${idx}`}
               title={tool.name}
-              className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/10 flex items-center justify-center p-2.5 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-108 shrink-0 shadow-xs"
+              className="w-12 h-12 sm:w-13 sm:h-13 rounded-2xl bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/10 flex items-center justify-center p-2 sm:p-2.5 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-108 shrink-0 shadow-xs [&_svg]:!w-6.5 [&_svg]:!h-6.5 sm:[&_svg]:!w-7 sm:[&_svg]:!h-7"
             >
               {tool.icon}
             </div>

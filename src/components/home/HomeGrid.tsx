@@ -48,7 +48,7 @@ export function HomeGrid() {
       className="w-full max-w-[1440px] mx-auto px-4 sm:px-8 md:px-12 pt-0 pb-12 sm:pb-20 flex flex-col items-center"
     >
       {/* Dynamic Background Hero Heading hugging header with no extra gap */}
-      <HeroTitleMorph title={getHeroTitle()} />
+      <HeroTitleMorph title={getHeroTitle()} isStickerDump={activeHover === "portrait"} />
 
       {/* Bento Grid overlapping the heading matching Image 2 reference */}
       <div className="w-full -mt-12 sm:-mt-16 md:-mt-22 lg:-mt-26 relative z-10 flex flex-col gap-3.5 sm:gap-5">
@@ -150,14 +150,16 @@ export function HomeGrid() {
             </div>
           </Link>
 
-          {/* Card 4: Portrait Photo */}
-          <div
+          {/* Card 4: Portrait Photo -> Discovers StickerDump.exe */}
+          <Link
+            href="/stickerdump"
+            aria-label="Discover StickerDump.exe – Independent creative brand"
             onMouseEnter={() => setActiveHover("portrait")}
             onMouseLeave={() => setActiveHover(null)}
             style={{ animationDelay: "320ms" }}
-            className={`group animate-tile-in sm:col-span-1 md:col-span-3 h-[210px] sm:h-[250px] md:h-[290px] rounded-[22px] sm:rounded-[28px] overflow-hidden relative border transition-all duration-600 ease-[cubic-bezier(0.22,1,0.36,1)] cursor-pointer ${
+            className={`group animate-tile-in sm:col-span-1 md:col-span-3 h-[210px] sm:h-[250px] md:h-[290px] rounded-[22px] sm:rounded-[28px] overflow-hidden relative border transition-all duration-600 ease-[cubic-bezier(0.22,1,0.36,1)] cursor-pointer block ${
               isHovered("portrait")
-                ? "scale-[1.012] border-black/30 dark:border-white/35 z-20 shadow-2xl opacity-100"
+                ? "scale-[1.015] border-pink-500/40 dark:border-pink-400/40 z-20 shadow-2xl opacity-100 ring-2 ring-pink-500/20"
                 : isDimmed("portrait")
                 ? "opacity-60 scale-[0.994] border-black/10 dark:border-white/10"
                 : "opacity-100 scale-100 border-black/10 dark:border-white/10 hover:border-black/25 dark:hover:border-white/30"
@@ -165,13 +167,25 @@ export function HomeGrid() {
           >
             <Image
               src="/images/profile-portrait.png"
-              alt="Portrait of Rugved Shelke"
+              alt="Portrait of Rugved Shelke – Tap to discover StickerDump.exe"
               fill
               sizes="(max-width: 768px) 50vw, 25vw"
-              className="object-cover object-center grayscale contrast-125 dark:brightness-95 transition-transform duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-106"
+              className="object-cover object-center grayscale contrast-125 dark:brightness-95 group-hover:grayscale-0 group-hover:contrast-100 group-hover:brightness-100 group-hover:scale-106 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
               priority
             />
-          </div>
+
+            {/* Subtle floating StickerDump badge on hover */}
+            <div className="absolute inset-x-0 bottom-0 p-3.5 sm:p-4 bg-gradient-to-t from-black/85 via-black/40 to-transparent flex items-center justify-between text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-pink-500 animate-pulse" />
+                <span className="text-xs sm:text-sm font-semibold tracking-tight text-white drop-shadow-xs">StickerDump.exe</span>
+              </div>
+              <span className="text-[11px] font-medium text-pink-300 flex items-center gap-0.5">
+                <span>Brand</span>
+                <ArrowUpRight className="w-3.5 h-3.5" />
+              </span>
+            </div>
+          </Link>
 
           {/* Card 5 & 6 Stack: Tools (top) + Resume (bottom) */}
           <div

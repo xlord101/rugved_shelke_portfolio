@@ -90,6 +90,13 @@ export function Footer() {
             <Link href="/portfolio" className="hover:text-black dark:hover:text-white transition-colors">
               Portfolio
             </Link>
+            <Link
+              href="/stickerdump"
+              className="inline-flex items-center gap-1.5 hover:text-black dark:hover:text-white transition-colors group"
+            >
+              <span>StickerDump</span>
+              <span className="text-[10px] font-mono tracking-wider px-1.5 py-0.5 rounded-md bg-pink-500/10 text-pink-600 dark:text-pink-400 border border-pink-500/20">.exe</span>
+            </Link>
             <Link href="/contact" className="hover:text-black dark:hover:text-white transition-colors">
               Contact
             </Link>

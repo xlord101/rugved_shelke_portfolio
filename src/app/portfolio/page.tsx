@@ -12,8 +12,8 @@ export default function PortfolioPage() {
   return (
     <main className="min-h-screen flex flex-col justify-between overflow-x-hidden">
       <Header />
-      <div className="flex-1 max-w-7xl mx-auto px-4 sm:px-8 md:px-12 w-full pt-8 sm:pt-16 pb-20">
-        <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-medium tracking-tight text-black dark:text-white leading-[1.05] max-w-6xl mb-12 sm:mb-20">
+      <div className="flex-1 max-w-[1240px] mx-auto px-4 sm:px-8 md:px-12 w-full pt-6 sm:pt-10 pb-16">
+        <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-medium tracking-tight text-black dark:text-white leading-[1.12] max-w-4xl mb-8 sm:mb-12">
           Selected engineering systems, AI-native applications &amp; bespoke client platforms
         </h1>
         <PortfolioGrid />
