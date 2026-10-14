@@ -2,38 +2,37 @@ import { TestimonialItem } from "@/lib/types";
 
 export const testimonialsContent: TestimonialItem[] = [
   {
-    id: "principle-1",
+    id: "quote-1",
     quote:
-      "Build for real use — I value software that solves a concrete problem and works beyond a demonstration.",
-    author: "Engineering principle",
-    company: "· How I Work",
+      "A million dollars isn’t cool. You know what’s cool? A billion dollars.",
+    author: "Sean Parker",
+    company: "· The Social Network",
   },
   {
-    id: "principle-2",
-    quote:
-      "Verify before shipping — I check assumptions, test edge cases, and treat AI-generated output as something to validate.",
-    author: "Engineering principle",
-    company: "· How I Work",
-  },
-  {
-    id: "principle-3",
-    quote:
-      "Own the outcome — I care about implementation, reliability, and what happens after a feature is delivered.",
-    author: "Engineering principle",
-    company: "· How I Work",
-  },
-  {
-    id: "principle-4",
+    id: "quote-2",
     quote:
       "Learn by building — I strengthen my understanding by creating projects, experimenting, and working through practical problems.",
-    author: "Engineering principle",
+    author: "Engineering Principle",
     company: "· How I Work",
   },
   {
-    id: "principle-5",
+    id: "quote-3",
+    quote: "Real artists ship.",
+    author: "Steve Jobs",
+    company: "· Apple",
+  },
+  {
+    id: "quote-4",
     quote:
-      "Think across the stack — I consider the user experience, backend behavior, data integrity, and the complete product workflow.",
-    author: "Engineering principle",
+      "Own the outcome — I care about implementation, reliability, and what happens after a feature is delivered.",
+    author: "Engineering Principle",
     company: "· How I Work",
+  },
+  {
+    id: "quote-5",
+    quote:
+      "Run, don’t walk. Either you’re running for food, or you’re running from being food.",
+    author: "Jensen Huang",
+    company: "· NVIDIA",
   },
 ];
