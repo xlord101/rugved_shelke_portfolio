@@ -1,6 +1,5 @@
 import { StickerDumpNav } from "@/components/stickerdump/StickerDumpNav";
 import { StickerDumpHero } from "@/components/stickerdump/StickerDumpHero";
-import { StickerCollection } from "@/components/stickerdump/StickerCollection";
 import { PricingOrdering } from "@/components/stickerdump/PricingOrdering";
 import { NfcShowcase } from "@/components/stickerdump/NfcShowcase";
 import { BehindTheBrand } from "@/components/stickerdump/BehindTheBrand";
@@ -10,7 +9,7 @@ import { StickerDumpFooter } from "@/components/stickerdump/StickerDumpFooter";
 export const metadata = {
   title: "StickerDump.exe – Playful Stickers & Personalized NFC Cards",
   description:
-    "Independent creative brand by Rugved Shelke. Playful sticker designs, weatherproof vinyl prints, and personalized NFC business & portfolio cards.",
+    "Playful sticker designs, weatherproof vinyl prints, and personalized NFC business & portfolio cards by Rugved Shelke.",
 };
 
 export default function StickerDumpPage() {
@@ -19,7 +18,6 @@ export default function StickerDumpPage() {
       <StickerDumpNav />
       <div className="flex-1 flex flex-col w-full">
         <StickerDumpHero />
-        <StickerCollection />
         <PricingOrdering />
         <NfcShowcase />
         <BehindTheBrand />

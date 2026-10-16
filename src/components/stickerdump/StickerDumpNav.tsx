@@ -47,12 +47,6 @@ export function StickerDumpNav() {
       {/* Center Column: Anchor Navigation */}
       <nav className="hidden md:flex items-center gap-6 lg:gap-8 font-medium text-zinc-600 dark:text-zinc-400">
         <a
-          href="#stickers"
-          className="hover:text-black dark:hover:text-white transition-colors"
-        >
-          Stickers
-        </a>
-        <a
           href="#pricing"
           className="hover:text-black dark:hover:text-white transition-colors"
         >
@@ -116,13 +110,6 @@ export function StickerDumpNav() {
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div className="absolute top-full left-0 w-full bg-[var(--bg-page)] border-b border-black/10 dark:border-white/10 p-6 flex flex-col gap-4 md:hidden z-50 shadow-xl">
-          <a
-            href="#stickers"
-            onClick={() => setMobileMenuOpen(false)}
-            className="text-base font-medium text-black dark:text-white"
-          >
-            Stickers
-          </a>
           <a
             href="#pricing"
             onClick={() => setMobileMenuOpen(false)}

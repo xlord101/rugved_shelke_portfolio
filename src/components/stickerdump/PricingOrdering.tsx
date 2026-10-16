@@ -5,7 +5,7 @@ import { ArrowUpRight, MessageCircle, HelpCircle } from "lucide-react";
 import { stickerDumpContent } from "@/content/stickerdump";
 
 export function PricingOrdering() {
-  const { small, large, minOrder, steps, customNote } = stickerDumpContent.pricing;
+  const { small, large, minOrder, customNote } = stickerDumpContent.pricing;
 
   return (
     <section id="pricing" className="w-full py-16 sm:py-24 px-4 sm:px-8 md:px-12 scroll-mt-20">
@@ -134,32 +134,6 @@ export function PricingOrdering() {
                 <span>Direct packing &amp; personal care</span>
               </li>
             </ul>
-          </div>
-        </div>
-
-        {/* 3-Step Ordering Guide */}
-        <div className="flex flex-col gap-6">
-          <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-black dark:text-white">
-            Ordering in 3 Simple Steps
-          </h3>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
-            {steps.map((s) => (
-              <div
-                key={s.num}
-                className="p-6 rounded-[22px] bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/10 flex flex-col gap-2"
-              >
-                <span className="text-2xl font-extrabold font-mono text-pink-600 dark:text-pink-400">
-                  {s.num}
-                </span>
-                <h4 className="text-base font-semibold text-black dark:text-white">
-                  {s.title}
-                </h4>
-                <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed font-normal">
-                  {s.desc}
-                </p>
-              </div>
-            ))}
           </div>
         </div>
 

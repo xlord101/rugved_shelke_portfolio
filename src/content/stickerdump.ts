@@ -9,7 +9,7 @@ export interface StickerCategory {
 
 export const stickerDumpContent = {
   brandName: "StickerDump.exe",
-  eyebrow: "INDEPENDENT CREATIVE BRAND · STICKERS & NFC",
+  eyebrow: "STICKERS & NFC PRODUCTS",
   headline: "Small things. Big personality.",
   supportingCopy:
     "StickerDump.exe is where playful sticker designs meet personalized products. Made for your laptop, your everyday carry, your space, and the way you express yourself.",
@@ -120,7 +120,7 @@ export const stickerDumpContent = {
   behindTheBrand: {
     heading: "Made with a little chaos.",
     story:
-      "StickerDump.exe began as an independent creative venture by Rugved Shelke—driven by the simple conviction that the physical things we carry every day deserve personal expression. In a world crowded with sterile tech, we cut through the noise with tactile stickers, vibrant ink, and experimental NFC products.",
+      "StickerDump.exe was started by Rugved Shelke—driven by the conviction that the physical things we carry every day deserve personal expression. In a world crowded with sterile tech, we cut through the noise with tactile stickers, vibrant ink, and experimental NFC products.",
   },
 
   finalCta: {

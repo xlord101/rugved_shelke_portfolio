@@ -40,12 +40,6 @@ export function StickerDumpFooter() {
           {/* Quick Links */}
           <div className="flex flex-wrap items-center gap-5 sm:gap-6 text-xs sm:text-sm font-medium text-zinc-600 dark:text-zinc-400">
             <a
-              href="#stickers"
-              className="hover:text-black dark:hover:text-white transition-colors"
-            >
-              Stickers
-            </a>
-            <a
               href="#pricing"
               className="hover:text-black dark:hover:text-white transition-colors"
             >
@@ -80,7 +74,7 @@ export function StickerDumpFooter() {
           </Link>
 
           <span>
-            © {currentYear} StickerDump.exe · An independent creative brand by Rugved Shelke
+            © {currentYear} StickerDump.exe · Rugved Shelke
           </span>
         </div>
       </div>

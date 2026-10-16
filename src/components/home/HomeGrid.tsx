@@ -153,13 +153,13 @@ export function HomeGrid() {
           {/* Card 4: Portrait Photo -> Discovers StickerDump.exe */}
           <Link
             href="/stickerdump"
-            aria-label="Discover StickerDump.exe – Independent creative brand"
+            aria-label="Discover StickerDump.exe – Playful stickers & custom NFC cards"
             onMouseEnter={() => setActiveHover("portrait")}
             onMouseLeave={() => setActiveHover(null)}
             style={{ animationDelay: "320ms" }}
             className={`group animate-tile-in sm:col-span-1 md:col-span-3 h-[210px] sm:h-[250px] md:h-[290px] rounded-[22px] sm:rounded-[28px] overflow-hidden relative border transition-all duration-600 ease-[cubic-bezier(0.22,1,0.36,1)] cursor-pointer block ${
               isHovered("portrait")
-                ? "scale-[1.015] border-pink-500/40 dark:border-pink-400/40 z-20 shadow-2xl opacity-100 ring-2 ring-pink-500/20"
+                ? "scale-[1.015] border-black/30 dark:border-white/35 z-20 shadow-2xl opacity-100"
                 : isDimmed("portrait")
                 ? "opacity-60 scale-[0.994] border-black/10 dark:border-white/10"
                 : "opacity-100 scale-100 border-black/10 dark:border-white/10 hover:border-black/25 dark:hover:border-white/30"
@@ -176,11 +176,8 @@ export function HomeGrid() {
 
             {/* Subtle floating StickerDump badge on hover */}
             <div className="absolute inset-x-0 bottom-0 p-3.5 sm:p-4 bg-gradient-to-t from-black/85 via-black/40 to-transparent flex items-center justify-between text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-pink-500 animate-pulse" />
-                <span className="text-xs sm:text-sm font-semibold tracking-tight text-white drop-shadow-xs">StickerDump.exe</span>
-              </div>
-              <span className="text-[11px] font-medium text-pink-300 flex items-center gap-0.5">
+              <span className="text-xs sm:text-sm font-semibold tracking-tight text-white drop-shadow-xs">StickerDump.exe</span>
+              <span className="text-[11px] font-medium text-zinc-300 dark:text-zinc-400 flex items-center gap-0.5">
                 <span>Brand</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
               </span>

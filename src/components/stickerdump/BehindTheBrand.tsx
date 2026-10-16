@@ -2,7 +2,6 @@
 
 import React from "react";
 import Image from "next/image";
-import { Sparkles, Heart } from "lucide-react";
 import { stickerDumpContent } from "@/content/stickerdump";
 
 export function BehindTheBrand() {
@@ -30,15 +29,13 @@ export function BehindTheBrand() {
             </p>
 
             <div className="p-6 sm:p-8 rounded-[28px] glass-panel border border-black/10 dark:border-white/15 flex flex-col gap-4">
-              <div className="flex items-center gap-2 text-xs font-mono text-pink-600 dark:text-pink-400 font-semibold uppercase tracking-wider">
-                <Sparkles className="w-4 h-4" />
-                <span>Independent Ethos</span>
-              </div>
+              <span className="text-xs font-mono text-pink-600 dark:text-pink-400 font-semibold uppercase tracking-wider">
+                Design &amp; Build Ethos
+              </span>
               <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
                 No corporate committees or mass-market algorithms. Every sticker design and physical card prototype is cut, reviewed, and packed by an engineering student with a genuine obsession for good design and tactile individuality.
               </p>
-              <div className="flex items-center gap-2 pt-2 text-xs text-zinc-500 font-mono">
-                <Heart className="w-3.5 h-3.5 text-pink-500" />
+              <div className="pt-2 text-xs text-zinc-500 font-mono">
                 <span>Crafted by Rugved Shelke in Kolhapur, India</span>
               </div>
             </div>

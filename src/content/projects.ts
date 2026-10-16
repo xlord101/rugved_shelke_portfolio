@@ -31,7 +31,7 @@ export const projectsContent: ProjectItem[] = [
     title: "RaceIQ — Real-Time Race Decision Engine",
     category: "AI / Motorsport Strategy",
     year: "2026",
-    image: "/images/projects/raceiq.webp",
+    image: "/images/projects/raceiq-hero.webp",
     overview:
       "Co-built a race decision engine for TrackShift 2026 in connection with the Haas F1 Team. The system inferred hidden opponent battery state from public telemetry using an 8-state Hidden Markov Model and optimized attack, hold, and defend decisions using a two-tier dynamic-programming and rolling-horizon model-predictive-control engine.",
     challenge:

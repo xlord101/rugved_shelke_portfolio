@@ -15,16 +15,18 @@ export function HeroTitleMorph({ title, isStickerDump = false }: HeroTitleMorphP
       {isStickerDump ? (
         <div
           key="stickerdump-hero-logo"
-          className="animate-sticker-pop flex items-center justify-center filter drop-shadow-[0_12px_32px_rgba(176,33,103,0.35)]"
+          className="relative z-20 flex items-center justify-center -translate-y-6 sm:-translate-y-10 md:-translate-y-14 lg:-translate-y-16"
         >
-          <div className="relative w-[220px] sm:w-[320px] md:w-[420px] lg:w-[480px] h-[75px] sm:h-[105px] md:h-[135px] lg:h-[155px]">
-            <Image
-              src="/images/stickerdump/stickerdump-logo.png"
-              alt="StickerDump.exe"
-              fill
-              priority
-              className="object-contain"
-            />
+          <div className="animate-sticker-pop flex items-center justify-center filter drop-shadow-[0_12px_32px_rgba(0,0,0,0.35)] dark:drop-shadow-[0_12px_32px_rgba(255,255,255,0.2)]">
+            <div className="relative w-[340px] sm:w-[500px] md:w-[640px] lg:w-[740px] h-[110px] sm:h-[160px] md:h-[200px] lg:h-[230px]">
+              <Image
+                src="/images/stickerdump/stickerdump-logo.png"
+                alt="StickerDump.exe"
+                fill
+                priority
+                className="object-contain"
+              />
+            </div>
           </div>
         </div>
       ) : (

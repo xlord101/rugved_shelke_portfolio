@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { ArrowDown, Sparkles, Smartphone, Layers, ShieldCheck } from "lucide-react";
+import { ArrowDown, Smartphone, Layers, ShieldCheck } from "lucide-react";
 import { stickerDumpContent } from "@/content/stickerdump";
 
 export function StickerDumpHero() {
@@ -12,12 +12,6 @@ export function StickerDumpHero() {
       <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[300px] sm:w-[500px] md:w-[700px] h-[260px] sm:h-[400px] bg-gradient-to-tr from-pink-500/15 via-purple-500/10 to-amber-500/10 rounded-full blur-3xl pointer-events-none -z-10" />
 
       <div className="max-w-[1240px] mx-auto flex flex-col items-center text-center">
-        {/* Eyebrow badge */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-pink-500/10 dark:bg-pink-400/15 border border-pink-500/20 text-pink-700 dark:text-pink-300 text-xs sm:text-sm font-medium mb-6 sm:mb-8 select-none">
-          <Sparkles className="w-3.5 h-3.5" />
-          <span>{stickerDumpContent.eyebrow}</span>
-        </div>
-
         {/* Hero Visual Collage: Prominent StickerDump Logo & Floating Accents */}
         <div className="relative w-full max-w-2xl h-[170px] sm:h-[240px] md:h-[300px] mb-8 sm:mb-12 flex items-center justify-center select-none">
           {/* Main Logo Container */}
@@ -80,10 +74,10 @@ export function StickerDumpHero() {
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full sm:w-auto">
           <a
-            href="#stickers"
+            href="#pricing"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-pink-600 hover:bg-pink-700 dark:bg-pink-500 dark:hover:bg-pink-600 text-white font-medium text-sm sm:text-base transition-all shadow-md hover:shadow-lg hover:scale-102"
           >
-            <span>Explore the Stickers</span>
+            <span>Explore Pricing &amp; Order</span>
             <ArrowDown className="w-4 h-4" />
           </a>
 
