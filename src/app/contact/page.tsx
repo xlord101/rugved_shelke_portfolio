@@ -3,8 +3,9 @@ import { Footer } from "@/components/layout/Footer";
 import { ContactForm } from "@/components/contact/ContactForm";
 
 export const metadata = {
-  title: "Contact – Soren Weil",
-  description: "Get in touch with Soren Weil for product design, design engineering, and creative direction.",
+  title: "Contact – Rugved Shelke",
+  description:
+    "Get in touch with Rugved Shelke for software engineering, full-stack systems, AI applications, and freelance product development.",
 };
 
 export default function ContactPage() {

@@ -24,7 +24,7 @@ export function HomeGrid() {
       case "contact":
         return "Contact";
       case "portrait":
-        return "Hey 👋";
+        return "StickerDump";
       case "stack":
         return "Stack";
       case "resume":
@@ -48,7 +48,7 @@ export function HomeGrid() {
       className="w-full max-w-[1440px] mx-auto px-4 sm:px-8 md:px-12 pt-0 pb-12 sm:pb-20 flex flex-col items-center"
     >
       {/* Dynamic Background Hero Heading hugging header with no extra gap */}
-      <HeroTitleMorph title={getHeroTitle()} isStickerDump={activeHover === "portrait"} />
+      <HeroTitleMorph title={getHeroTitle()} />
 
       {/* Bento Grid overlapping the heading matching Image 2 reference */}
       <div className="w-full -mt-12 sm:-mt-16 md:-mt-22 lg:-mt-26 relative z-10 flex flex-col gap-3.5 sm:gap-5">

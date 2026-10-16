@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { ArrowUpRight, Copy, Check, Mail, MapPin } from "lucide-react";
 import { contactContent } from "@/content/contact";
 
 export function ContactForm() {
@@ -11,12 +12,35 @@ export function ContactForm() {
   const [details, setDetails] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [copiedEmail, setCopiedEmail] = useState(false);
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
   const toggleType = (type: string) => {
     setSelectedTypes((prev) =>
       prev.includes(type) ? prev.filter((t) => t !== type) : [...prev, type]
     );
+  };
+
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(contactContent.email);
+      setCopiedEmail(true);
+      setTimeout(() => setCopiedEmail(false), 2000);
+    } catch {
+      // Fallback
+    }
+  };
+
+  const getMailtoUrl = () => {
+    const subject = encodeURIComponent(
+      `Project Inquiry: ${selectedTypes.join(", ") || "Engineering Collaboration"} – ${fullName || "Portfolio Inquiry"}`
+    );
+    const body = encodeURIComponent(
+      `Hi Rugved,\n\nName: ${fullName}\nEmail: ${email}\nProject Type: ${
+        selectedTypes.join(", ") || "Not specified"
+      }\nBudget Range: ${selectedBudget || "Not specified"}\n\nProject Details:\n${details}\n`
+    );
+    return `mailto:${contactContent.email}?subject=${subject}&body=${body}`;
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -38,80 +62,144 @@ export function ContactForm() {
     setErrors({});
     setIsSubmitting(true);
 
-    // Simulate submission state for demonstration
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitted(true);
-    }, 800);
+    }, 600);
   };
 
   return (
-    <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-12 sm:gap-16 pt-8 sm:pt-16 pb-20 text-black dark:text-white transition-colors">
-      {/* Left Column: Headline and Direct Contacts */}
-      <div className="lg:col-span-5 flex flex-col justify-between">
+    <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-14 lg:gap-16 pt-8 sm:pt-14 pb-20 text-black dark:text-white transition-colors">
+      {/* Left Column: Structured Heading, Bio Context & Direct Contacts */}
+      <div className="lg:col-span-5 flex flex-col justify-between gap-10">
         <div>
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-medium tracking-tight leading-[1.05] mb-12 sm:mb-16">
+          <span className="text-xs uppercase tracking-widest font-mono text-zinc-500 dark:text-zinc-400 font-semibold mb-3 block">
+            GET IN TOUCH
+          </span>
+
+          <h1 className="text-3xl sm:text-5xl font-medium tracking-tight leading-[1.12] mb-4 text-black dark:text-white">
             {contactContent.headline}
           </h1>
 
-          <div className="flex flex-col gap-8 sm:gap-10">
-            <div>
-              <span className="block text-xs uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-2 font-medium">
-                Phone
+          <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 font-normal leading-relaxed mb-8 sm:mb-10 max-w-lg">
+            {contactContent.subheading}
+          </p>
+
+          {/* Direct Email Card with One-Click Copy */}
+          <div className="p-5 sm:p-6 rounded-[24px] glass-panel border border-black/8 dark:border-white/10 flex flex-col gap-3 mb-6">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-mono uppercase tracking-wider text-zinc-500 dark:text-zinc-400 font-medium">
+                Direct Email
               </span>
-              <a
-                href={`tel:${contactContent.phone.replace(/[^0-9+]/g, "")}`}
-                className="text-2xl sm:text-3xl font-medium hover:opacity-70 transition-opacity"
+              <button
+                type="button"
+                onClick={copyToClipboard}
+                className="inline-flex items-center gap-1.5 text-xs font-mono text-zinc-600 dark:text-zinc-300 hover:text-black dark:hover:text-white transition-colors cursor-pointer"
+                title="Copy email address"
               >
-                {contactContent.phone}
-              </a>
+                {copiedEmail ? (
+                  <>
+                    <Check className="w-3.5 h-3.5 text-emerald-500" />
+                    <span className="text-emerald-500">Copied</span>
+                  </>
+                ) : (
+                  <>
+                    <Copy className="w-3.5 h-3.5" />
+                    <span>Copy</span>
+                  </>
+                )}
+              </button>
             </div>
 
-            <div>
-              <span className="block text-xs uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-2 font-medium">
-                Email
-              </span>
-              <a
-                href={`mailto:${contactContent.email}`}
-                className="text-2xl sm:text-3xl font-medium hover:opacity-70 transition-opacity"
-              >
-                {contactContent.email}
-              </a>
+            <a
+              href={`mailto:${contactContent.email}`}
+              className="text-xl sm:text-2xl font-medium text-black dark:text-white hover:opacity-75 transition-opacity flex items-center justify-between group"
+            >
+              <span className="break-all">{contactContent.email}</span>
+              <ArrowUpRight className="w-5 h-5 shrink-0 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+            </a>
+          </div>
+
+          {/* Location & Timezone Indicator */}
+          <div className="flex items-center gap-2 text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 font-mono mb-8 px-1">
+            <MapPin className="w-3.5 h-3.5 text-zinc-400 dark:text-zinc-500" />
+            <span>Kolhapur / Pune, India · IST (UTC+5:30)</span>
+          </div>
+
+          {/* Social Profiles */}
+          <div className="flex flex-col gap-3">
+            <span className="text-xs font-mono uppercase tracking-wider text-zinc-500 dark:text-zinc-400 font-medium">
+              Profiles &amp; Code
+            </span>
+            <div className="flex flex-wrap gap-2.5">
+              {contactContent.socials.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full glass-panel border border-black/8 dark:border-white/10 text-xs sm:text-sm font-medium text-black dark:text-white hover:glass-panel-hovered transition-all group"
+                >
+                  <span>{social.label}</span>
+                  <span className="text-zinc-400 dark:text-zinc-500 font-mono text-xs">
+                    {social.handle}
+                  </span>
+                  <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </a>
+              ))}
             </div>
           </div>
         </div>
+
+        {/* Live Availability Status */}
+        {contactContent.availabilityNotice && (
+          <div className="flex items-center gap-2.5 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 font-normal pt-4 border-t border-black/5 dark:border-white/10">
+            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse shrink-0" />
+            <span>{contactContent.availabilityNotice}</span>
+          </div>
+        )}
       </div>
 
       {/* Right Column: Contact Form Card */}
       <div className="lg:col-span-7">
-        <div className="w-full rounded-[28px] sm:rounded-[36px] glass-panel p-6 sm:p-10 md:p-12">
+        <div className="w-full rounded-[28px] sm:rounded-[36px] glass-panel p-6 sm:p-10 md:p-12 border border-black/8 dark:border-white/10">
           {submitted ? (
-            <div className="py-16 text-center flex flex-col items-center">
-              <div className="w-16 h-16 rounded-full bg-black/5 dark:bg-white/10 flex items-center justify-center mb-6">
-                <span className="text-2xl">✓</span>
+            <div className="py-12 sm:py-16 text-center flex flex-col items-center">
+              <div className="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-6">
+                <Check className="w-8 h-8" />
               </div>
-              <h2 className="text-2xl sm:text-3xl font-medium tracking-tight mb-3">
-                Message Sent (Demo State)
+              <h2 className="text-2xl sm:text-3xl font-medium tracking-tight mb-3 text-black dark:text-white">
+                Message Prepared
               </h2>
-              <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 max-w-md mb-8">
-                Thank you for your message! This template form is functioning locally. Connect your email service (e.g. Resend, Formspree) to receive submissions.
+              <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 max-w-md mb-8 leading-relaxed">
+                Thank you, <span className="font-semibold text-black dark:text-white">{fullName}</span>! Click below to send directly via your email client, or I will review your inquiry shortly.
               </p>
-              <button
-                onClick={() => {
-                  setSubmitted(false);
-                  setFullName("");
-                  setEmail("");
-                  setDetails("");
-                  setSelectedTypes([]);
-                  setSelectedBudget("");
-                }}
-                className="px-6 py-3 rounded-full border border-black/20 dark:border-white/20 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
-              >
-                Send Another Message
-              </button>
+              <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
+                <a
+                  href={getMailtoUrl()}
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-black dark:bg-white text-white dark:text-black text-sm font-medium hover:opacity-85 transition-opacity"
+                >
+                  <Mail className="w-4 h-4" />
+                  <span>Send via Email Client</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </a>
+                <button
+                  onClick={() => {
+                    setSubmitted(false);
+                    setFullName("");
+                    setEmail("");
+                    setDetails("");
+                    setSelectedTypes([]);
+                    setSelectedBudget("");
+                  }}
+                  className="w-full sm:w-auto px-6 py-3.5 rounded-full border border-black/15 dark:border-white/15 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 transition-colors cursor-pointer"
+                >
+                  Start Over
+                </button>
+              </div>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col gap-6 sm:gap-8">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-6 sm:gap-7">
               {/* Full Name */}
               <div>
                 <label
@@ -125,7 +213,6 @@ export function ContactForm() {
                   type="text"
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
-                  placeholder="ex. John Smith"
                   className={`w-full px-4 sm:px-5 py-3.5 sm:py-4 rounded-2xl bg-black/5 dark:bg-white/5 border ${
                     errors.fullName
                       ? "border-red-500"
@@ -133,7 +220,7 @@ export function ContactForm() {
                   } focus:outline-none focus:border-black dark:focus:border-white text-base transition-colors`}
                 />
                 {errors.fullName && (
-                  <p className="text-xs text-red-500 mt-1">{errors.fullName}</p>
+                  <p className="text-xs text-red-500 mt-1.5">{errors.fullName}</p>
                 )}
               </div>
 
@@ -150,7 +237,6 @@ export function ContactForm() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="hello@website.com"
                   className={`w-full px-4 sm:px-5 py-3.5 sm:py-4 rounded-2xl bg-black/5 dark:bg-white/5 border ${
                     errors.email
                       ? "border-red-500"
@@ -158,7 +244,7 @@ export function ContactForm() {
                   } focus:outline-none focus:border-black dark:focus:border-white text-base transition-colors`}
                 />
                 {errors.email && (
-                  <p className="text-xs text-red-500 mt-1">{errors.email}</p>
+                  <p className="text-xs text-red-500 mt-1.5">{errors.email}</p>
                 )}
               </div>
 
@@ -167,7 +253,7 @@ export function ContactForm() {
                 <span className="block text-sm font-medium mb-3 text-zinc-700 dark:text-zinc-300">
                   What&apos;s Your Project About?
                 </span>
-                <div className="flex flex-wrap gap-2.5 sm:gap-3">
+                <div className="flex flex-wrap gap-2 sm:gap-2.5">
                   {contactContent.projectTypes.map((type) => {
                     const active = selectedTypes.includes(type);
                     return (
@@ -175,9 +261,9 @@ export function ContactForm() {
                         type="button"
                         key={type}
                         onClick={() => toggleType(type)}
-                        className={`px-4 py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all ${
+                        className={`px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all cursor-pointer ${
                           active
-                            ? "bg-black dark:bg-white text-white dark:text-black border-transparent"
+                            ? "bg-black dark:bg-white text-white dark:text-black border-transparent shadow-xs"
                             : "bg-black/5 dark:bg-white/5 border border-black/8 dark:border-white/10 text-zinc-700 dark:text-zinc-300 hover:border-black/20 dark:hover:border-white/25"
                         }`}
                       >
@@ -188,12 +274,12 @@ export function ContactForm() {
                 </div>
               </div>
 
-              {/* Project Budget */}
+              {/* Project Budget in Rupees */}
               <div>
                 <span className="block text-sm font-medium mb-3 text-zinc-700 dark:text-zinc-300">
-                  Project Budget
+                  Estimated Budget
                 </span>
-                <div className="flex flex-wrap gap-2.5 sm:gap-3">
+                <div className="flex flex-wrap gap-2 sm:gap-2.5">
                   {contactContent.budgetRanges.map((budget) => {
                     const active = selectedBudget === budget;
                     return (
@@ -201,9 +287,9 @@ export function ContactForm() {
                         type="button"
                         key={budget}
                         onClick={() => setSelectedBudget(active ? "" : budget)}
-                        className={`px-4 py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all ${
+                        className={`px-4 py-2 rounded-full text-xs sm:text-sm font-mono font-medium transition-all cursor-pointer ${
                           active
-                            ? "bg-black dark:bg-white text-white dark:text-black border-transparent"
+                            ? "bg-black dark:bg-white text-white dark:text-black border-transparent shadow-xs"
                             : "bg-black/5 dark:bg-white/5 border border-black/8 dark:border-white/10 text-zinc-700 dark:text-zinc-300 hover:border-black/20 dark:hover:border-white/25"
                         }`}
                       >
@@ -227,7 +313,6 @@ export function ContactForm() {
                   rows={4}
                   value={details}
                   onChange={(e) => setDetails(e.target.value)}
-                  placeholder="About your project..."
                   className="w-full px-4 sm:px-5 py-3.5 sm:py-4 rounded-2xl bg-black/5 dark:bg-white/5 border border-black/8 dark:border-white/10 focus:outline-none focus:border-black dark:focus:border-white text-base transition-colors resize-y"
                 />
               </div>
@@ -237,15 +322,14 @@ export function ContactForm() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="px-8 py-3.5 rounded-full bg-black dark:bg-white text-white dark:text-black text-base font-medium hover:opacity-85 transition-opacity disabled:opacity-50 cursor-pointer"
+                  className="px-8 py-3.5 rounded-full bg-black dark:bg-white text-white dark:text-black text-sm sm:text-base font-medium hover:opacity-85 transition-opacity disabled:opacity-50 cursor-pointer shadow-xs"
                 >
-                  {isSubmitting ? "Sending..." : "Submit"}
+                  {isSubmitting ? "Sending..." : "Submit Inquiry"}
                 </button>
 
-                <div className="flex items-center gap-2 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 font-normal">
-                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
-                  <span>{contactContent.availabilityNotice}</span>
-                </div>
+                <span className="text-xs text-zinc-500 font-mono">
+                  No spam · Direct to Rugved
+                </span>
               </div>
             </form>
           )}

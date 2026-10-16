@@ -63,6 +63,7 @@ export interface SocialLink {
 
 export interface ContactContent {
   headline: string;
+  subheading?: string;
   email: string;
   phone: string;
   socials: SocialLink[];
