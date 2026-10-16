@@ -11,18 +11,14 @@ interface HeroTitleMorphProps {
 
 export function HeroTitleMorph({ title, isStickerDump = false }: HeroTitleMorphProps) {
   return (
-    <div
-      className={`relative w-full flex justify-center items-center pointer-events-none select-none pt-0 sm:pt-1 pb-0 h-[85px] sm:h-[120px] md:h-[155px] lg:h-[180px] overflow-visible ${
-        isStickerDump ? "z-20" : "z-0"
-      }`}
-    >
+    <div className="relative w-full flex justify-center items-start pointer-events-none select-none z-0 pt-0 sm:pt-1 pb-0 h-[85px] sm:h-[120px] md:h-[155px] lg:h-[180px] overflow-visible">
       {isStickerDump ? (
         <div
           key="stickerdump-hero-logo"
-          className="relative flex items-center justify-center translate-y-2.5 sm:translate-y-3.5 md:translate-y-4"
+          className="relative flex items-center justify-center pt-2 sm:pt-3 md:pt-4"
         >
-          <div className="animate-sticker-pop flex items-center justify-center filter drop-shadow-[0_16px_36px_rgba(0,0,0,0.65)] dark:drop-shadow-[0_16px_36px_rgba(0,0,0,0.9)]">
-            <div className="relative w-[280px] sm:w-[380px] md:w-[460px] lg:w-[500px] h-[95px] sm:h-[125px] md:h-[155px] lg:h-[170px]">
+          <div className="animate-sticker-pop flex items-center justify-center filter drop-shadow-[0_12px_32px_rgba(0,0,0,0.3)] dark:drop-shadow-[0_12px_32px_rgba(255,255,255,0.15)]">
+            <div className="relative w-[360px] sm:w-[520px] md:w-[680px] lg:w-[820px] xl:w-[900px] h-[120px] sm:h-[175px] md:h-[230px] lg:h-[275px] xl:h-[300px]">
               <Image
                 src="/images/stickerdump/stickerdump-logo.png"
                 alt="StickerDump.exe"
