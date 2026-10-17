@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { siteContent } from "@/content/site";
 
@@ -13,11 +12,11 @@ interface ResumeCardProps {
 
 export function ResumeCard({ onHover, isDimmed, isHovered }: ResumeCardProps) {
   return (
-    <Link
+    <a
       href={siteContent.resumeUrl}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Download or view Resume"
+      aria-label="Open Rugved Shelke Resume in new tab"
       onMouseEnter={() => onHover?.(true)}
       onMouseLeave={() => onHover?.(false)}
       className={`group relative w-full h-full p-4.5 sm:p-7 rounded-[22px] sm:rounded-[28px] glass-panel flex flex-col justify-end select-none overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
@@ -42,6 +41,6 @@ export function ResumeCard({ onHover, isDimmed, isHovered }: ResumeCardProps) {
         </span>
         <ArrowUpRight className="w-4.5 h-4.5 sm:w-6 sm:h-6 text-black dark:text-white transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1.5 group-hover:-translate-y-1.5" />
       </div>
-    </Link>
+    </a>
   );
 }

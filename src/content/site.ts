@@ -9,7 +9,7 @@ export const siteContent: SiteConfig = {
   bioShort:
     "I build AI-native applications and software systems that solve practical problems — from intelligent developer tools and race-strategy systems to production software for real businesses.",
   availabilityStatus: "",
-  resumeUrl: "/resume-placeholder.pdf",
+  resumeUrl: "/rugved-shelke-resume.pdf",
   tools: [
     { name: "Python", category: "AI & Backend", icon: "python" },
     { name: "TypeScript", category: "Full-Stack Language", icon: "typescript" },
