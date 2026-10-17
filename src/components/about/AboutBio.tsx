@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import { aboutContent } from "@/content/about";
 
 export function AboutBio() {
@@ -49,7 +48,7 @@ export function AboutBio() {
   return (
     <div className="w-full">
       {/* Editorial Two-Column Lead Section */}
-      <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 pt-6 sm:pt-10 lg:pt-14 pb-16 sm:pb-24">
+      <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 pt-6 sm:pt-10 lg:pt-14 pb-14 sm:pb-20">
         {/* Left Column: Bold About Page Heading */}
         <div className="lg:col-span-5 flex flex-col justify-start">
           <h1 className="text-[clamp(74px,10.2vw,140px)] font-medium tracking-[-0.095em] text-black dark:text-white leading-[0.84] select-none">
@@ -57,7 +56,7 @@ export function AboutBio() {
           </h1>
         </div>
 
-        {/* Right Column: Bio Paragraph with Scroll-driven Illuminating Words + Portrait Card */}
+        {/* Right Column: Bio Paragraph with Scroll-driven Illuminating Words */}
         <div className="lg:col-span-7 flex flex-col justify-start pt-4 sm:pt-10 lg:pt-24">
           {/* Scroll-Illuminating Bio Paragraph */}
           <p
@@ -85,26 +84,6 @@ export function AboutBio() {
               );
             })}
           </p>
-
-          {/* Portrait of Rugved aligned to right column below bio */}
-          <div className="w-full sm:w-[88%] lg:w-[68%] ml-auto mt-16 sm:mt-24">
-            <figure className="w-full flex flex-col">
-              <div className="w-full aspect-[4/5] relative rounded-[22px] sm:rounded-[28px] overflow-hidden border border-black/10 dark:border-white/10 bg-black/5 dark:bg-black group">
-                <Image
-                  src={aboutContent.portraitImage}
-                  alt="Portrait of Rugved Shelke"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 45vw"
-                  className="object-cover object-top grayscale contrast-125 dark:brightness-95 group-hover:scale-104 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
-                  priority
-                />
-              </div>
-              <figcaption className="flex items-center justify-between pt-3 px-1 text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 select-none">
-                <span className="font-medium text-black dark:text-white">Rugved Shelke</span>
-                <span>AI & Software Engineer · Product Builder</span>
-              </figcaption>
-            </figure>
-          </div>
         </div>
       </div>
     </div>
