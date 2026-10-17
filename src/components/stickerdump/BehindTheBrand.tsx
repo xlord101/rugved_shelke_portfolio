@@ -33,10 +33,10 @@ export function BehindTheBrand() {
                 Design &amp; Build Ethos
               </span>
               <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                No corporate committees or mass-market algorithms. Every sticker design and physical card prototype is cut, reviewed, and packed by an engineering student with a genuine obsession for good design and tactile individuality.
+                No corporate committees or mass-market algorithms. Every sticker design and physical card prototype is cut, reviewed, and packed with a genuine obsession for good design, tactile individuality, and collaborative craft.
               </p>
               <div className="pt-2 text-xs text-zinc-500 font-mono">
-                <span>Crafted by Rugved Shelke in Kolhapur, India</span>
+                <span>Co-founded and built by Rugved Shelke &amp; Nupur in Kolhapur, India</span>
               </div>
             </div>
           </div>

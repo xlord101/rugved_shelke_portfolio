@@ -120,7 +120,7 @@ export const stickerDumpContent = {
   behindTheBrand: {
     heading: "Made with a little chaos.",
     story:
-      "StickerDump.exe was started by Rugved Shelke—driven by the conviction that the physical things we carry every day deserve personal expression. In a world crowded with sterile tech, we cut through the noise with tactile stickers, vibrant ink, and experimental NFC products.",
+      "StickerDump.exe was co-founded and built by Rugved Shelke and Nupur—driven by the conviction that the physical things we carry every day deserve personal expression. In a world crowded with sterile tech, we cut through the noise with tactile stickers, vibrant ink, and experimental NFC products.",
   },
 
   finalCta: {

@@ -74,7 +74,7 @@ export function StickerDumpFooter() {
           </Link>
 
           <span>
-            © {currentYear} StickerDump.exe · Rugved Shelke
+            © {currentYear} StickerDump.exe · Co-founded by Rugved Shelke &amp; Nupur
           </span>
         </div>
       </div>
