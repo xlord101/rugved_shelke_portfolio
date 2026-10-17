@@ -86,7 +86,7 @@ export function Header({ customBackLabel, customBackHref }: HeaderProps) {
 
       {/* Right Column: Location + Live Clock + Theme Toggle */}
       <div className="flex items-center gap-3 sm:gap-6 z-10">
-        <div className="text-zinc-600 dark:text-zinc-400 text-xs sm:text-sm font-normal flex items-center">
+        <div className="hidden sm:flex text-zinc-600 dark:text-zinc-400 text-xs sm:text-sm font-normal items-center">
           <span>{siteContent.location}</span>
           {timeString && (
             <>

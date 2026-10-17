@@ -47,13 +47,23 @@ export function HomeGrid() {
       onMouseLeave={() => setActiveHover(null)}
       className="w-full max-w-[1440px] mx-auto px-4 sm:px-8 md:px-12 pt-0 pb-12 sm:pb-20 flex flex-col items-center"
     >
-      {/* Dynamic Background Hero Heading hugging header with no extra gap */}
-      <HeroTitleMorph title={getHeroTitle()} />
+      {/* Desktop: Dynamic Background Hero Heading hugging header with no extra gap */}
+      <div className="hidden md:block w-full">
+        <HeroTitleMorph title={getHeroTitle()} />
+      </div>
 
-      {/* Bento Grid overlapping the heading matching Image 2 reference */}
-      <div className="w-full -mt-12 sm:-mt-16 md:-mt-22 lg:-mt-26 relative z-10 flex flex-col gap-3.5 sm:gap-5">
-        {/* ROW 1: About (narrow) + Portfolio (wide) */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-3.5 sm:gap-5 w-full">
+      {/* Mobile: Clean Editorial Headline matching mobile reference */}
+      <div className="w-full text-left pt-3 pb-2 sm:pt-4 sm:pb-3 md:hidden">
+        <h1 className="text-[30px] sm:text-4xl font-semibold tracking-[-0.035em] leading-[1.12] text-black dark:text-white">
+          AI &amp; Software Engineer.<br />
+          Product Builder.
+        </h1>
+      </div>
+
+      {/* Bento Grid overlapping the heading on desktop, cleanly spaced on mobile */}
+      <div className="w-full mt-2 sm:mt-3 md:-mt-22 lg:-mt-26 relative z-10 flex flex-col gap-3 sm:gap-5">
+        {/* ROW 1: About + Portfolio */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-3 sm:gap-5 w-full">
           {/* Card 1: About */}
           <Link
             href="/about"
@@ -61,7 +71,7 @@ export function HomeGrid() {
             onMouseEnter={() => setActiveHover("about")}
             onMouseLeave={() => setActiveHover(null)}
             style={{ animationDelay: "100ms" }}
-            className={`group animate-tile-in md:col-span-4 lg:col-span-3.5 xl:col-span-3 h-[210px] sm:h-[250px] md:h-[290px] p-6 sm:p-8 rounded-[22px] sm:rounded-[28px] glass-panel flex flex-col justify-end select-none overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            className={`group animate-tile-in md:col-span-4 lg:col-span-3.5 xl:col-span-3 h-[140px] sm:h-[220px] md:h-[290px] p-5 sm:p-8 rounded-[22px] sm:rounded-[28px] glass-panel flex flex-col justify-end select-none overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
               isHovered("about")
                 ? "glass-panel-hovered z-20"
                 : isDimmed("about")
@@ -92,7 +102,7 @@ export function HomeGrid() {
             onMouseEnter={() => setActiveHover("portfolio")}
             onMouseLeave={() => setActiveHover(null)}
             style={{ animationDelay: "180ms" }}
-            className={`group animate-tile-in md:col-span-8 lg:col-span-8.5 xl:col-span-9 h-[210px] sm:h-[250px] md:h-[290px] p-6 sm:p-8 rounded-[22px] sm:rounded-[28px] glass-panel flex flex-col justify-end select-none overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            className={`group animate-tile-in md:col-span-8 lg:col-span-8.5 xl:col-span-9 h-[140px] sm:h-[220px] md:h-[290px] p-5 sm:p-8 rounded-[22px] sm:rounded-[28px] glass-panel flex flex-col justify-end select-none overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
               isHovered("portfolio")
                 ? "glass-panel-hovered z-20"
                 : isDimmed("portfolio")
@@ -117,8 +127,8 @@ export function HomeGrid() {
           </Link>
         </div>
 
-        {/* ROW 2: Contact (wide) + Portrait (square) + (ToolStack / Resume) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-3.5 sm:gap-5 w-full">
+        {/* ROW 2: Contact (left) + Portrait (right) + (ToolStack / Resume) */}
+        <div className="grid grid-cols-2 md:grid-cols-12 gap-3 sm:gap-5 w-full">
           {/* Card 3: Contact */}
           <Link
             href="/contact"
@@ -126,7 +136,7 @@ export function HomeGrid() {
             onMouseEnter={() => setActiveHover("contact")}
             onMouseLeave={() => setActiveHover(null)}
             style={{ animationDelay: "260ms" }}
-            className={`group animate-tile-in sm:col-span-1 md:col-span-6 h-[210px] sm:h-[250px] md:h-[290px] p-6 sm:p-8 rounded-[22px] sm:rounded-[28px] glass-panel flex flex-col justify-end select-none overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            className={`group animate-tile-in col-span-1 md:col-span-6 h-[155px] sm:h-[220px] md:h-[290px] p-4.5 sm:p-8 rounded-[22px] sm:rounded-[28px] glass-panel flex flex-col justify-end select-none overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
               isHovered("contact")
                 ? "glass-panel-hovered z-20"
                 : isDimmed("contact")
@@ -143,10 +153,10 @@ export function HomeGrid() {
                   : "opacity-100"
               }`}
             >
-              <span className="text-xl sm:text-2xl font-medium tracking-tight text-black dark:text-white transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-2">
+              <span className="text-lg sm:text-2xl font-medium tracking-tight text-black dark:text-white transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-2">
                 Contact
               </span>
-              <ArrowUpRight className="w-5 h-5 sm:w-6 sm:h-6 text-black dark:text-white transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1.5 group-hover:-translate-y-1.5" />
+              <ArrowUpRight className="w-4.5 h-4.5 sm:w-6 sm:h-6 text-black dark:text-white transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1.5 group-hover:-translate-y-1.5" />
             </div>
           </Link>
 
@@ -157,7 +167,7 @@ export function HomeGrid() {
             onMouseEnter={() => setActiveHover("portrait")}
             onMouseLeave={() => setActiveHover(null)}
             style={{ animationDelay: "320ms" }}
-            className={`group animate-tile-in sm:col-span-1 md:col-span-3 h-[210px] sm:h-[250px] md:h-[290px] rounded-[22px] sm:rounded-[28px] overflow-hidden relative border transition-all duration-600 ease-[cubic-bezier(0.22,1,0.36,1)] cursor-pointer block ${
+            className={`group animate-tile-in col-span-1 md:col-span-3 h-[155px] sm:h-[220px] md:h-[290px] rounded-[22px] sm:rounded-[28px] overflow-hidden relative border transition-all duration-600 ease-[cubic-bezier(0.22,1,0.36,1)] cursor-pointer block ${
               isHovered("portrait")
                 ? "scale-[1.015] border-black/30 dark:border-white/35 z-20 shadow-2xl opacity-100"
                 : isDimmed("portrait")
@@ -184,19 +194,19 @@ export function HomeGrid() {
             </div>
           </Link>
 
-          {/* Card 5 & 6 Stack: Tools (top) + Resume (bottom) */}
+          {/* Card 5 & 6 Stack: Tools (left on mobile, top on desktop) + Resume (right on mobile, bottom on desktop) */}
           <div
             style={{ animationDelay: "380ms" }}
-            className="animate-tile-in sm:col-span-2 md:col-span-3 h-auto sm:h-auto md:h-[290px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-3.5 sm:gap-5"
+            className="animate-tile-in col-span-2 md:col-span-3 h-auto md:h-[290px] grid grid-cols-2 md:grid-cols-1 gap-3 sm:gap-5"
           >
-            <div className="h-[130px] sm:h-[135px] w-full">
+            <div className="h-[135px] md:h-[135px] w-full">
               <ToolStack
                 onHover={(hovered) => setActiveHover(hovered ? "stack" : null)}
                 isHovered={isHovered("stack")}
                 isDimmed={isDimmed("stack")}
               />
             </div>
-            <div className="h-[130px] sm:h-[135px] w-full">
+            <div className="h-[135px] md:h-[135px] w-full">
               <ResumeCard
                 onHover={(hovered) => setActiveHover(hovered ? "resume" : null)}
                 isHovered={isHovered("resume")}

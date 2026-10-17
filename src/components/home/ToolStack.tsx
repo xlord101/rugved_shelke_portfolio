@@ -93,7 +93,7 @@ export function ToolStack({ onHover, isDimmed, isHovered }: ToolStackProps) {
     <div
       onMouseEnter={() => onHover?.(true)}
       onMouseLeave={() => onHover?.(false)}
-      className={`group relative w-full h-full p-4 sm:p-5 rounded-[24px] sm:rounded-[28px] glass-panel select-none overflow-hidden flex items-center transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+      className={`group relative w-full h-full p-3 sm:p-5 rounded-[22px] sm:rounded-[28px] glass-panel select-none overflow-hidden flex items-center transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
         isHovered
           ? "glass-panel-hovered z-20"
           : isDimmed
@@ -113,29 +113,53 @@ export function ToolStack({ onHover, isDimmed, isHovered }: ToolStackProps) {
             "linear-gradient(to right, transparent 0%, black 14%, black 86%, transparent 100%)",
         }}
       >
-        {/* Infinite scrolling ticker */}
-        <div className="animate-marquee flex items-center gap-4 sm:gap-6 w-max">
-          {/* Set 1 */}
-          {tools.map((tool, idx) => (
-            <div
-              key={`tool-1-${idx}`}
-              title={tool.name}
-              className="w-12 h-12 sm:w-13 sm:h-13 rounded-2xl bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/10 flex items-center justify-center p-2 sm:p-2.5 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-108 shrink-0 shadow-xs [&_svg]:!w-6.5 [&_svg]:!h-6.5 sm:[&_svg]:!w-7 sm:[&_svg]:!h-7"
-            >
-              {tool.icon}
-            </div>
-          ))}
+        {/* Mobile: Pill tags matching reference (Web, APIs, AI, Python, Next.js, Docker) */}
+        <div className="md:hidden w-full overflow-hidden">
+          <div className="animate-marquee items-center gap-2">
+            {["Web", "APIs", "AI", "Python", "Next.js", "Docker"].map((tag, idx) => (
+              <span
+                key={`m-tag-1-${idx}`}
+                className="px-3 py-1.5 rounded-xl text-xs font-medium tracking-tight bg-black/10 dark:bg-white/10 text-black dark:text-white border border-black/10 dark:border-white/15 shadow-xs whitespace-nowrap"
+              >
+                {tag}
+              </span>
+            ))}
+            {["Web", "APIs", "AI", "Python", "Next.js", "Docker"].map((tag, idx) => (
+              <span
+                key={`m-tag-2-${idx}`}
+                className="px-3 py-1.5 rounded-xl text-xs font-medium tracking-tight bg-black/10 dark:bg-white/10 text-black dark:text-white border border-black/10 dark:border-white/15 shadow-xs whitespace-nowrap"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
 
-          {/* Set 2 for seamless loop */}
-          {tools.map((tool, idx) => (
-            <div
-              key={`tool-2-${idx}`}
-              title={tool.name}
-              className="w-12 h-12 sm:w-13 sm:h-13 rounded-2xl bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/10 flex items-center justify-center p-2 sm:p-2.5 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-108 shrink-0 shadow-xs [&_svg]:!w-6.5 [&_svg]:!h-6.5 sm:[&_svg]:!w-7 sm:[&_svg]:!h-7"
-            >
-              {tool.icon}
-            </div>
-          ))}
+        {/* Desktop: Tech tool icons */}
+        <div className="hidden md:block w-full overflow-hidden">
+          <div className="animate-marquee items-center gap-4 sm:gap-6">
+            {/* Set 1 */}
+            {tools.map((tool, idx) => (
+              <div
+                key={`tool-1-${idx}`}
+                title={tool.name}
+                className="w-12 h-12 sm:w-13 sm:h-13 rounded-2xl bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/10 flex items-center justify-center p-2 sm:p-2.5 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-108 shrink-0 shadow-xs [&_svg]:!w-6.5 [&_svg]:!h-6.5 sm:[&_svg]:!w-7 sm:[&_svg]:!h-7"
+              >
+                {tool.icon}
+              </div>
+            ))}
+
+            {/* Set 2 for seamless loop */}
+            {tools.map((tool, idx) => (
+              <div
+                key={`tool-2-${idx}`}
+                title={tool.name}
+                className="w-12 h-12 sm:w-13 sm:h-13 rounded-2xl bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/10 flex items-center justify-center p-2 sm:p-2.5 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-108 shrink-0 shadow-xs [&_svg]:!w-6.5 [&_svg]:!h-6.5 sm:[&_svg]:!w-7 sm:[&_svg]:!h-7"
+              >
+                {tool.icon}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
