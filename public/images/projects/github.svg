@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="100%" height="100%">
+  <defs>
+    <radialGradient id="ghAmbientGlow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#388bfd" stop-opacity="0.12" />
+      <stop offset="50%" stop-color="#161b22" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#0d1117" stop-opacity="1" />
+    </radialGradient>
+    <pattern id="ghDotGrid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.2" fill="#30363d" fill-opacity="0.45" />
+    </pattern>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#161b22" />
+      <stop offset="100%" stop-color="#0d1117" />
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#010409" flood-opacity="0.8" />
+    </filter>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="1200" height="800" fill="#0d1117" />
+  <rect width="1200" height="800" fill="url(#ghDotGrid)" />
+  <circle cx="600" cy="400" r="420" fill="url(#ghAmbientGlow)" />
+
+  <!-- Ambient Outer Dashed Border -->
+  <rect x="40" y="40" width="1120" height="720" rx="24" fill="none" stroke="#30363d" stroke-width="1.2" stroke-dasharray="6 6" opacity="0.6" />
+
+  <!-- Center Card Window Frame -->
+  <g transform="translate(200, 130)" filter="url(#cardShadow)">
+    <!-- Card Base -->
+    <rect width="800" height="540" rx="22" fill="url(#cardGrad)" stroke="#30363d" stroke-width="1.2" />
+
+    <!-- Window Header Bar -->
+    <line x1="0" y1="52" x2="800" y2="52" stroke="#30363d" stroke-width="1" />
+    <circle cx="32" cy="26" r="6" fill="#ff5f56" />
+    <circle cx="52" cy="26" r="6" fill="#ffbd2e" />
+    <circle cx="72" cy="26" r="6" fill="#27c93f" />
+
+    <text x="400" y="32" text-anchor="middle" fill="#8b949e" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500">
+      github.com/xlord101
+    </text>
+
+    <!-- Official GitHub Invertocat Logo -->
+    <g transform="translate(352, 95) scale(4)">
+      <path fill="#f0f6fc" d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+    </g>
+
+    <!-- Main Title -->
+    <text x="400" y="240" text-anchor="middle" fill="#f0f6fc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="36" font-weight="600" letter-spacing="-0.8">
+      Explore More on GitHub
+    </text>
+
+    <!-- Description -->
+    <text x="400" y="280" text-anchor="middle" fill="#8b949e" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="400">
+      Open Source Repositories · AI Systems · Experimental Code
+    </text>
+
+    <!-- Tech tags -->
+    <g transform="translate(400, 320)">
+      <!-- Tag 1 -->
+      <rect x="-175" y="0" width="105" height="28" rx="14" fill="#21262d" stroke="#30363d" stroke-width="1" />
+      <text x="-122" y="18" text-anchor="middle" fill="#c9d1d9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">
+        AI Agents
+      </text>
+
+      <!-- Tag 2 -->
+      <rect x="-60" y="0" width="120" height="28" rx="14" fill="#21262d" stroke="#30363d" stroke-width="1" />
+      <text x="0" y="18" text-anchor="middle" fill="#c9d1d9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">
+        Full-Stack Apps
+      </text>
+
+      <!-- Tag 3 -->
+      <rect x="70" y="0" width="105" height="28" rx="14" fill="#21262d" stroke="#30363d" stroke-width="1" />
+      <text x="122" y="18" text-anchor="middle" fill="#c9d1d9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">
+        Automation
+      </text>
+    </g>
+
+    <!-- Action Link Button -->
+    <g transform="translate(400, 390)">
+      <rect x="-130" y="0" width="260" height="48" rx="24" fill="#21262d" stroke="#388bfd" stroke-width="1.2" />
+      <text x="-12" y="30" text-anchor="middle" fill="#58a6ff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="600" letter-spacing="0.2">
+        View @xlord101
+      </text>
+      <!-- Arrow icon -->
+      <path fill="none" stroke="#58a6ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M60 20 L72 20 L72 32 M72 20 L58 34" transform="scale(0.85) translate(40, -4)" />
+    </g>
+
+    <!-- Bottom subtle status -->
+    <text x="400" y="490" text-anchor="middle" fill="#484f58" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="400">
+      Active Contributions &amp; Public Engineering · 2026
+    </text>
+  </g>
+</svg>
