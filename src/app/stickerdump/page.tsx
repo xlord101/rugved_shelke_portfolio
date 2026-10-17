@@ -9,7 +9,7 @@ import { StickerDumpFooter } from "@/components/stickerdump/StickerDumpFooter";
 export const metadata = {
   title: "StickerDump.exe – Playful Stickers & Personalized NFC Cards",
   description:
-    "Playful sticker designs, weatherproof vinyl prints, and personalized NFC business & portfolio cards co-founded by Rugved Shelke & Nupur.",
+    "Playful sticker designs, weatherproof vinyl prints, and personalized NFC business & portfolio cards co-founded by Rugved & Nupur.",
 };
 
 export default function StickerDumpPage() {

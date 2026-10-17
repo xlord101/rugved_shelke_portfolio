@@ -36,7 +36,7 @@ export function BehindTheBrand() {
                 No corporate committees or mass-market algorithms. Every sticker design and physical card prototype is cut, reviewed, and packed with a genuine obsession for good design, tactile individuality, and collaborative craft.
               </p>
               <div className="pt-2 text-xs text-zinc-500 font-mono">
-                <span>Co-founded and built by Rugved Shelke &amp; Nupur in Kolhapur, India</span>
+                <span>Co-founded and built by Rugved &amp; Nupur in Kolhapur, India</span>
               </div>
             </div>
           </div>
