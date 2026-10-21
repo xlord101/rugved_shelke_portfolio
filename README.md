@@ -1,153 +1,81 @@
-# Vexoo — Editable Editorial Portfolio Template
+<div align="center">
 
-A high-fidelity recreation of the **Vexoo** personal portfolio template built with **Next.js 16 (App Router)**, **TypeScript**, and **Tailwind CSS v4**.
+# Rugved Shelke
 
-Designed with a minimal monochrome editorial aesthetic, frosted glass bento grid, scroll-driven text reveal, dynamic live timezone clock, theme toggle (Dark / Light modes), and centralized content architecture for effortless future customization.
+### AI & Software Engineer · Product Builder
 
----
+[![Live Portfolio](https://img.shields.io/badge/Live_Portfolio-rugved.is--a.dev-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://rugved.is-a.dev)
+[![GitHub](https://img.shields.io/badge/GitHub-xlord101-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/xlord101)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Rugved_Shelke-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rugvedshelke)
+[![X](https://img.shields.io/badge/X-@xlord101-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/xlord101)
 
-## 🌟 Key Features
+<p align="center">
+  <em>Turning ambitious ideas into reliable, production-grade software — from AI-native developer agents and race-strategy inference engines to multi-tenant supply-chain ERPs.</em>
+</p>
 
-1. **Monochrome Editorial Design System**:
-   - Near-black `#000000` deep canvas with subtle film grain noise overlay.
-   - Frosted glass cards (`backdrop-blur-xl`) with subtle hairline borders.
-   - Large display typography (`Plus Jakarta Sans`) with tight letter spacing.
-   - Seamless Dark and Light mode toggle with persistent state.
-
-2. **Asymmetric Bento Grid (Homepage)**:
-   - Oversized identity title positioned behind the cards with glassmorphism blur.
-   - Interactive navigation cards: **About**, **Portfolio**, **Contact**, **Resume**.
-   - High-contrast black & white portrait photo card.
-   - Interactive Tool Stack widget featuring Figma, Claude, Notion, and Framer.
-
-3. **Complete Multi-Page Structure**:
-   - `/` — Homepage asymmetric bento grid.
-   - `/about` — Oversized heading, scroll-reveal biography text, portrait photo, 5-column testimonial quote grid, career experience timeline, large closing display heading, and editorial footer.
-   - `/portfolio` — Editorial project showcase with 2-1-2 asymmetric card layout and hover zoom effects.
-   - `/portfolio/[slug]` — Pre-rendered dynamic project case study pages with client metadata, narrative sections, scope tags, and next project teaser.
-   - `/contact` — Direct email & phone display with interactive inquiry form (project type multi-select chips, budget chips, textarea, availability status, validation, and demo submission state).
-   - `/404` / `not-found` — Minimal editorial not-found page with quick return to home.
-
-4. **Dynamic Header & Editorial Footer**:
-   - Live location and ticking local time clock (`Kolhāpur • 8:30 PM`) configured via timezone.
-   - Dark/Light mode theme toggle.
-   - Dynamic back navigation (`← Home` / `← Back`).
-   - Shared multi-column footer across all subpages.
-
-5. **Centralized Editable Content Architecture**:
-   - All text, links, metadata, and assets are centralized in `src/content/`.
-   - Modifying a name, biography, or project requires editing only a single TypeScript data file without touching any UI component.
+[**Explore Live Website ↗**](https://rugved.is-a.dev) · [**View Projects ↗**](https://rugved.is-a.dev/portfolio) · [**Read Story ↗**](https://rugved.is-a.dev/about) · [**Get in Touch ↗**](https://rugved.is-a.dev/contact)
 
 ---
 
-## 🚀 Getting Started
+</div>
 
-### Prerequisites
-- Node.js 18+ or Node.js 20+
-- npm, pnpm, or bun
+## 👤 About Me
 
-### 1. Install Dependencies
-```bash
-npm install
-```
+I’m a Computer Science and Engineering student based in **Kolhāpur, India**, focused on building systems at the intersection of AI, distributed backend architectures, and thoughtful product design.
 
-### 2. Run the Development Server
-```bash
-npm run dev
-```
+I believe the best software lives in the space between technically sound engineering and genuine real-world utility. My work ranges from building autonomous LLM agents and mathematical optimization models to deploying real business software with strict concurrency guarantees.
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-### 3. Build for Production
-```bash
-npm run build
-npm run start
-```
+Alongside engineering, I co-founded **StickerDump.exe** with my friend Nupur, deliver client web solutions, and actively experiment with developer tooling and automation.
 
 ---
 
-## 📁 Project Structure
+## 🚀 Featured Systems & Projects
 
-```
-├── public/
-│   └── images/
-│       ├── portrait-card.png        # Small homepage portrait
-│       ├── portrait-large.jpg       # About page portrait
-│       └── projects/                # Project mockup assets
-│           ├── travel-easy.webp
-│           ├── gamma.webp
-│           ├── stream-ai.webp
-│           ├── foome.webp
-│           └── edbost.webp
-├── src/
-│   ├── app/
-│   │   ├── layout.tsx               # Root layout, Plus Jakarta Sans, ThemeProvider
-│   │   ├── globals.css              # Theme tokens, scrollbar, Tailwind v4
-│   │   ├── page.tsx                 # Homepage route
-│   │   ├── not-found.tsx            # Custom 404 page
-│   │   ├── about/page.tsx           # About page route
-│   │   ├── portfolio/page.tsx       # Portfolio grid route
-│   │   ├── portfolio/[slug]/page.tsx# Dynamic project detail route
-│   │   └── contact/page.tsx         # Contact route
-│   ├── components/
-│   │   ├── layout/
-│   │   │   ├── Header.tsx           # Shared header with live clock & theme toggle
-│   │   │   ├── Footer.tsx           # Multi-column footer
-│   │   │   ├── ThemeContext.tsx     # Dark/Light mode context
-│   │   │   └── NoiseOverlay.tsx     # Film grain noise texture
-│   │   ├── home/
-│   │   │   ├── HomeGrid.tsx         # Asymmetric bento grid
-│   │   │   ├── ToolStack.tsx        # Tool stack app icons
-│   │   │   └── ResumeCard.tsx       # Resume link card
-│   │   ├── about/
-│   │   │   ├── AboutBio.tsx         # Scroll-reveal text and portrait
-│   │   │   ├── QuoteGrid.tsx        # 5-item testimonial grid
-│   │   │   ├── ExperienceTimeline.tsx # Career history table
-│   │   │   └── ClosingHeading.tsx   # Display typography
-│   │   ├── portfolio/
-│   │   │   ├── PortfolioGrid.tsx    # 2-1-2 project grid
-│   │   │   ├── ProjectCard.tsx      # Individual project card
-│   │   │   └── ProjectDetail.tsx    # Case study template
-│   │   └── contact/
-│   │       └── ContactForm.tsx      # Interactive contact form
-│   ├── content/
-│   │   ├── site.ts                  # Identity, title, location, timezone, tools
-│   │   ├── about.ts                 # About heading, bio narrative, portrait
-│   │   ├── projects.ts              # Array of project case studies
-│   │   ├── experience.ts            # Career timeline entries
-│   │   ├── testimonials.ts          # Testimonial quotes and authors
-│   │   └── contact.ts               # Contact details, budget ranges, inquiry types
-│   └── lib/
-│       └── types.ts                 # TypeScript interfaces
-```
+| Project | Domain | Tech Stack | Highlights |
+|---|---|---|---|
+| **[Startrek ERP](https://kdexport.co.in/)** | Production ERP & Logistics | Next.js, PostgreSQL, Prisma, RBAC | Multi-tenant supply-chain platform for agricultural exporter KD Export. Features transactional inventory locking, room capacity bounds, and append-only audit trails. |
+| **[RaceIQ](https://github.com/xlord101/RaceIQ)** | AI / Motorsport Optimization | Python, React, HMM, MPC | Real-time race decision engine (TrackShift 2026 / Haas F1 connection). Infers latent opponent battery state using an 8-state Hidden Markov Model and optimizes overtakes with Model Predictive Control. |
+| **[IssuePilot](https://github.com/xlord101/open-source-contribution-agent)** | AI Agents & DevTools | Python, LangChain, FastAPI, MongoDB | Autonomous agent pipeline scoring open-source issues with deterministic verify-before-deliver filtering to ensure recommendations are actionable and unassigned. |
+| **[House of 666](https://house-of-666.netlify.app/)** | Web Experience | Next.js, React, Tailwind CSS | Atmospheric, mobile-first responsive web experience and interactive digital menu for a heritage-inspired cafe and restaurant. |
+| **[StickerDump.exe](https://rugved.is-a.dev/stickerdump)** | Hardware & NFC Products | Next.js, NFC Tech, E-Commerce | Physical product venture co-founded with Nupur — crafting tactile waterproof sticker drops and programmable NFC tap-to-share portfolio cards. |
 
 ---
 
-## ✏️ How to Personalize the Template
+## 🛠️ Technical Toolkit
 
-All editable values are clearly documented in `src/content/`:
+- **Languages:** Python, TypeScript, JavaScript, SQL, HTML/CSS
+- **Frameworks & Libraries:** Next.js (App Router), React, FastAPI, Node.js, Tailwind CSS
+- **AI & Intelligent Systems:** AI Agents (LangChain), Hidden Markov Models (HMM), Model Predictive Control (MPC), Prompt Engineering, Vector Search
+- **Databases & Backend:** PostgreSQL, Prisma ORM, MongoDB, RESTful APIs, Concurrency & Transaction Safety
+- **DevOps & Tooling:** Git, GitHub Actions, Docker, Linux, Vercel, Figma
 
-1. **Personal Identity & Location**:
-   Edit `src/content/site.ts`:
-   ```typescript
-   export const siteContent = {
-     personName: "Your Name",
-     professionalTitle: "Your Professional Title",
-     location: "Your City",
-     timezone: "Your/Timezone", // e.g. "America/New_York", "Europe/London"
-     resumeUrl: "/your-resume.pdf",
-   };
-   ```
+---
 
-2. **About Bio & Timeline**:
-   - Edit narrative in `src/content/about.ts`.
-   - Add/edit job positions in `src/content/experience.ts`.
-   - Update testimonials in `src/content/testimonials.ts`.
+## 🌐 About This Portfolio Website
 
-3. **Projects**:
-   - Edit or add items in `src/content/projects.ts`.
-   - Place mockup images inside `public/images/projects/`.
-   - The `/portfolio` grid and all `/portfolio/[slug]` detail routes update automatically.
+This repository powers **[rugved.is-a.dev](https://rugved.is-a.dev)** — designed with an editorial monochrome aesthetic inspired by minimalist Swiss typography and modern glassmorphism.
 
-4. **Contact Details**:
-   - Update email, phone, and social handles in `src/content/contact.ts`.
+### Tech Highlights:
+- **Framework:** Next.js 16 (App Router) with React 19 & Turbopack
+- **Styling:** Vanilla CSS design system + Tailwind CSS
+- **Interactive Experience:** Asymmetric bento grid, scroll-driven bio word illumination, live timezone ticking clock (`Kolhāpur • IST`), dark/light theme persistence, and custom Pokéball favicon suite
+- **Performance:** High-performance responsive layouts (`clamp`), zero layout shift, optimized WebP mockups
+- **Deployment:** Continuous deployment via Vercel with HTTPS on custom domain `rugved.is-a.dev`
+
+---
+
+## 📬 Let's Connect
+
+Have an engineering challenge, full-stack product, or AI system in mind? Let's build together.
+
+- 🌐 **Portfolio:** [rugved.is-a.dev](https://rugved.is-a.dev)
+- 🐙 **GitHub:** [@xlord101](https://github.com/xlord101)
+- 💼 **LinkedIn:** [Rugved Shelke](https://www.linkedin.com/in/rugvedshelke)
+- 🐦 **X / Twitter:** [@xlord101](https://x.com/xlord101)
+- ✉️ **Direct Email:** [rugvedshelke17@gmail.com](mailto:rugvedshelke17@gmail.com)
+
+---
+
+<div align="center">
+  <sub>Designed &amp; Engineered by <strong>Rugved Shelke</strong> · Kolhāpur, India</sub>
+</div>
